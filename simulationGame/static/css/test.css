@@ -1,0 +1,24 @@
+.input3-row {
+  background-color:aqua;
+ /* display: flex;
+  align-items: center;
+ /* justify-content: center; */
+  border: 2px solid black;
+  height: 300px;
+  display: flex; 
+  flex-direction: row;   
+ /* align-items: center;  
+  justify-content: center;  */
+  gap: 0.5rem;  
+}
+/*
+.label3-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: red;
+} */
+ 
+.runde3-label {
+  display: block; 
+}

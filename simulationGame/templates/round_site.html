@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Spieler {{ markt }} ist dran{% endblock %}
+{% block content %}
+{% include "partials/round_modal.html" %}
+<script src="{% static 'js/round_script.js' %}"></script>
+{% endblock %}

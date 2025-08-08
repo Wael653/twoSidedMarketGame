@@ -1,0 +1,15 @@
+{% load static %}
+<div class="custom-modal21"> 
+  <div class="custom-modal-content40">
+    <div class="basket">🧺</div> <!--"bi bi-shop"-->
+   <!-- <img src="{% static 'images/korb.png' %}" alt="Korb" class="korb-icon"> -->
+    <h1 class="willkommen-title">Willkommen</h1>
+    <h2 class="subtitle">zum Flohmarkt-Simulationsspiel!</h2>
+    <p class="info-text">
+      Klicke <a href="#" class="info-link">hier</a> um zu erfahren,<br>
+      wie das Spiel funktioniert.
+    </p>
+    <a href="{% url 'configuration' %}">
+    <button class="spiel-starten-btn">Spiel starten</button>
+    </a>
+  </div>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ergebnisse Runde</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px;
+      animation-name: boxConfIn;
+      animation-duration: 0.8s;
+    }
+
+    .header { 
+      font-family:'Comic Sans MS';
+      background-color: #f9edd6;
+      padding: 20px 40px;
+      border-radius: 20px;
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: #bc4749;
+      border: 2px solid #b6a18b;
+      margin-bottom: 30px;
+    }
+
+    .results {
+      display: flex;
+      justify-content: space-around;
+      gap: 7rem;
+      margin-bottom: 0px;
+    }
+
+    .results div {
+      font-size: 1.2rem;
+      color: #7a5e48;
+    }
+
+    .chart-container {
+      background-color: #f9edd6;
+      padding: 30px;
+      border: 2px solid #b6a18b;
+      border-radius: 20px;
+      min-width: 600px;
+      margin-bottom: 50px;
+    }
+
+    #myChart {
+      width: 100%;
+      height: 400px;
+      display: block;
+    }
+    .results-container {
+      gap: 2rem;
+      background-color: #f9edd6;
+      border: 2px solid #b6a18b;
+      border-radius: 20px;
+      padding: 30px;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    div strong {
+     color: #ff9100;
+     font-size: 2rem;
+     display: block;
+     margin-bottom: 1rem;
+    }
+    .results div div{
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id = "round_header" class="header" data-round-number ="{{round_number}}">Ergebnisse Runde {{round_number}}</div>
+    <div class="results-container"> 
+      <div class="results">
+        <div>
+          <div><strong>Flohmarkt A</strong></div>
+          <div id="sup_num_A" data-suppliers-number-A ="{{suppliers_number_A}}">Verkäufer: {{suppliers_number_A}}</div>
+          <div>Käufer: 313</div>
+          <div>Umsatz: 5839 €</div>
+          <div>Käufer-Preis: 15 €</div>
+          <div>Verkäufer-Preis: {{stand_rental_A}} €</div>
+        </div>
+        <div>
+          <div><strong>Flohmarkt B</strong></div>
+          <div id="sup_num_B" data-suppliers-number-B ="{{suppliers_number_B}}">Verkäufer: {{suppliers_number_B}}</div>
+          <div>Käufer: 246</div>
+          <div>Umsatz: 5382 €</div>
+          <div>Käufer-Preis: 17 €</div>
+          <div>Verkäufer-Preis: {{stand_rental_B}} €</div>
+        </div>
+      </div>
+      <a href=" {% if last_round %}
+                 {% url 'show_winner' %}
+              {% else %}
+                 {% url 'round_view' nxt_round 'A' %}
+              {% endif%} ">
+        <button class="next-btn">
+         {% if last_round  %}
+            Gewinner anzeigen
+         {% else %}
+            weiter zur Runde {{ nxt_round }}
+         {% endif %}
+        </button> 
+      </a>
+    </div>
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+  <div id="suppliers_data" 
+     data-suppliers-a="{{ suppliers_number_list_A|join:',' }}"  
+     data-suppliers-b="{{ suppliers_number_list_B|join:',' }}"
+     data-prices-list-a = "{{ prices_list_A|join:',' }}"
+     data-prices-list-b = "{{ prices_list_B|join:',' }}">{{ prices_list_A }}
+</div>
+</body>
+</html>
+<!--{{ suppliers_number_list_A|join:',' }}-->

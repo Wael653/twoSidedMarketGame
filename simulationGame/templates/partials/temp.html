@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ergebnisse Runde</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .header {
+      background-color: #f9edd6;
+      padding: 20px 40px;
+      border-radius: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #bc4749;
+      border: 2px solid #b6a18b;
+      margin-bottom: 30px;
+    }
+
+    .results {
+      display: flex;
+      justify-content: space-around;
+      gap: 3rem;
+    }
+
+    .results div {
+      font-size: 1.2rem;
+      color: #7a5e48;
+    }
+
+    .chart-container {
+      background-color: #f9edd6;
+      padding: 20px;
+      border-radius: 20px;
+      width: 600px;
+      margin-bottom: 50px;
+    }
+
+    #myChart {
+      width: 100%;
+      height: 400px;
+      display: block;
+    }
+    .results-container {
+      gap: 2rem;
+      background-color: #f9edd6;
+      border: 2px solid #b6a18b;
+      border-radius: 20px;
+      padding: 30px;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    div strong {
+     margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Ergebnisse Runde 1</div>
+    <div class="results-container"> 
+      <div class="results">
+        <div>
+          <div><strong>Flohmarkt A</strong></div>
+          <div>Verkäufer: 48</div>
+          <div>Käufer: 313</div>
+          <div>Umsatz: 5839 €</div>
+          <div>Käufer-Preis: 15 €</div>
+          <div>Verkäufer-Preis: 12 €</div>
+        </div>
+        <div>
+          <div><strong>Flohmarkt B</strong></div>
+          <div>Verkäufer: 52</div>
+          <div>Käufer: 246</div>
+          <div>Umsatz: 5382 €</div>
+          <div>Käufer-Preis: 17 €</div>
+          <div>Verkäufer-Preis: 12 €</div>
+        </div>
+      </div>
+      <a href=" {% if last_round %}
+                 {% url 'show_winner' %}
+              {% else %}
+                 {% url 'round_view' nxt_round 'A' %}
+              {% endif%} ">
+        <button class="next-btn">
+         {% if last_round  %}
+            Gewinner anzeigen
+         {% else %}
+            weiter zur Runde {{ nxt_round }}
+         {% endif %}
+        </button> 
+      </a>
+    </div>
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+          backgroundColor: 'rgba(75, 192, 192, 0.5)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,87 @@
+.modal-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.modal-content {
+  background: #f9edd6;
+  border: 2.5px solid #b6a18b;
+  box-shadow: 0 4px 8px #b9a88b;
+  padding: 36px 32px 32px 32px;
+  border-radius: 32px ;
+  width: 600px;
+  max-width: 95vw;
+  text-align: center;
+  animation-name: modalIn;
+  animation-duration: 0.8s;
+}
+
+.modal_header7 {
+  padding: 13px 38px 13px 38px;
+  border-radius: 22px;
+  background:#f9edd6;
+  font-size: 2.6rem;
+  color: #bc4749;
+  font-weight: bold; 
+  font-family:'Comic Sans MS';
+  text-align: center;
+  border: 2.5px solid #b6a18b; 
+  /*position:relative; */
+  letter-spacing: 2px;
+  width: fit-content;
+  animation-name: modalIn;
+  animation-duration: 0.8s;
+} 
+  
+.results-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 7rem; 
+  margin-bottom: 32px;
+}
+
+.market-col1, .market-col2 {
+  text-align: left;
+  font-size: 1.5rem;
+  color: #7a5e48;
+}
+
+.market-title {
+  color: #ffb800;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  font-family: inherit;
+}
+
+.next-btn {
+  margin-top: 10px;
+  font-size: 1.8rem;
+  background:  #6e7f4d;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 32px;
+ /* box-shadow: 3px 6px 0 #3c4619; */
+/*  font-family: inherit; */
+  letter-spacing: 1px;
+ /* font-weight: bold; */
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.next-btn:hover {
+  background:#8ba766;
+}
+
+.barChart2 {  
+   height:800px;
+   background-color: #f9edd6;
+   padding: 20px;
+   border-radius: 20px;
+   width: 600px;
+   margin-bottom: 50px;
+}

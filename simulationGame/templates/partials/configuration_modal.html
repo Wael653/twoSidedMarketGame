@@ -1,0 +1,55 @@
+{% load static %}
+<div id="konfiguration-modal" class="custom-modal21">
+  <div class="custom-modal-content">
+    <div class="modal-header">
+<!--  <img src="{% static 'images/gear.png' %}" alt="Zahnrad" class="modal-icon"> -->
+      <h1 class="modal-title">Spiel konfigurieren</h1>
+    </div>
+    <p class="modal-desc">
+      Gebe die Einstellungen für deine Simulation ein:
+    </p>
+    <form method="post"> 
+      {% csrf_token %}
+      <div class="modal-row6">
+        <i class="bi bi-clock-fill"></i>   
+        <label class="option-label5">Rundenanzahl:</label>
+        <select name="game_rounds_number" class="modal-select">
+          <option value="">wählen</option>
+          <option value="3">3</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="modal-row6">
+        <!--class = "bi bi-basket-fill"-->
+        <label class="option-label5">Wechelseitiger Effekt:</label>
+        <select id="dynamicSelect" onchange="adjustWidth(this)"name="cross_side" class="modal-select invisible">
+          <option value="">wählen</option>
+          <option value="option_1">Verkäufer-Effekt: groß, Käufer-Effekt: klein</option>
+          <option value="option_2">Verkäufer-Effekt: klein, Käufer-Effekt: groß</option>
+          <option value="option_3">Gleiche Effekte auf Verkäufer- und Käuferseite</option>
+        </select>
+        <div class="tooltip-wrapper">
+          <i id ="icon23" class="bi bi-exclamation-circle info-icon23" onclick="toggleTooltip()"></i>
+          <div id="tooltip-text" class="tooltip-text">
+             <strong>Wechselseitiger Effekt:</strong><br>
+              Dieser beschreibt, wie die Anzahl der Individuellen auf Käufer- und Verkäuferseite sich gegenseitig beeinflussen:
+             <ul>
+              <li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer weniger.</li>
+              <li><b>Option 2:</b> Käufer hat starken Einfluss, Verkäufer weniger.</li>
+              <li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich stark.</li>
+             </ul>
+          </div>
+        </div>
+      </div>
+      
+      <button type="submit" class="simulation-start-btn">Simulation starten</button>
+    </form> 
+       {% if error %}
+          <br> 
+          <div class="error">{{ error }}</div> 
+       {% endif %} 
+  </div> 
+</div>

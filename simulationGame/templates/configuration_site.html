@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Spiel konfigurieren{% endblock %}
+{% block content %}
+{% include "partials/configuration_modal.html" %}
+<script src="{% static 'js/configuration_script.js' %}"></script>
+{% endblock %}

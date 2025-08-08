@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Ergebnisse Runde {{ round_number }}{% endblock %}
+{% block content %}
+{% include "partials/results_modal.html" %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{% static 'js/results_script.js' %}"></script> 
+{% endblock %}
