@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hamburger Menü (mit div-Linien)</title>
+<style>
+  /* Hamburger Button  */
+  .hamburger {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 24px;
+    right: 28px;
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    border: 3px solid #e7d2a6;
+    background: #fff1d2;
+    cursor: pointer;
+  }
+
+  .hamburger:focus-visible {
+    outline: 3px solid #502aeaff;
+    outline-offset: 3px;
+  } 
+
+  .hamburger-lines {
+    width: 34px;
+    height: 22px;
+    position: relative;
+  }
+
+  .hamburger-line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background: #7a5b3a;
+    transition: transform .25s ease, opacity .2s ease, top .25s ease, bottom .25s ease;
+  }
+  .line-top    { top: 0; }
+  .line-middle { top: 9px; }
+  .line-bottom { bottom: 0; }
+
+  /* Animation zu "X" im geöffneten Zustand */
+  
+  .hamburger[aria-expanded="true"] .line-middle { opacity: 0; }
+  .hamburger[aria-expanded="true"] .line-top {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+  .hamburger[aria-expanded="true"] .line-bottom {
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
+
+  /* === Dropdown-Panel === */
+  .menu {
+    position: fixed;
+    top: 98px;
+    right: 28px;
+    z-index: 15;
+    width: 220px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 2px solid #caa574;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  }
+  .menu[hidden] { display: none; }
+
+  .menu ul { list-style: none; margin: 8px 0; padding: 0; }
+  .menu a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #3b2a18;
+  }
+  .menu a:hover,
+  .menu a:focus { background: #fff1d2; }
+  .menu__title { font-weight: 700; padding: 6px 12px 2px; color: #905c17; }
+  .hr { height: 1px; background: #f0e3c6; margin: 6px 0; border-radius: 1px; }
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger"
+        aria-label="Menü öffnen"
+        aria-controls="menupanel"
+        aria-expanded="false">
+  <div class="hamburger-lines">
+    <div class="hamburger-line line-top"></div>
+    <div class="hamburger-line line-middle"></div>
+    <div class="hamburger-line line-bottom"></div>
+  </div>
+</button>
+
+<nav class="menu" id="menupanel" hidden>
+  <div class="menu__title">Menü</div>
+  <div class="hr"></div>
+  <ul>
+    <li><a href="#home">Start</a></li>
+    <li><a href="#optionen">Optionen</a></li>
+    <li><a href="#hilfe">Hilfe</a></li>
+    <li><a href="#ueber">Über</a></li>
+  </ul>
+</nav>
+
+<script>
+  const btn  = document.getElementById('hamburger');
+  const menu = document.getElementById('menupanel');
+
+  function toggleMenu(open) {
+    const willOpen = open ?? (btn.getAttribute('aria-expanded') !== 'true');
+    btn.setAttribute('aria-expanded', willOpen);
+    menu.hidden = !willOpen;
+  }
+
+  btn.addEventListener('click', () => toggleMenu());
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleMenu(false);
+  });
+  document.addEventListener('click', (e) => {
+    if (!menu.hidden && !menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+      toggleMenu(false);
+    }
+  });
+</script>
+
+</body>
+</html>

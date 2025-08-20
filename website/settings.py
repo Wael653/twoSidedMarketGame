@@ -79,7 +79,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'twoSidedMarketDB',
         'USER': 'postgres',
-        'PASSWORD': 'Grandmaster2500',
+        'PASSWORD': 'twosidedgame2025+',
         'HOST': 'localhost',    
         'PORT': '5433',
     }

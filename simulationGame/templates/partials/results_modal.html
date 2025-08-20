@@ -38,19 +38,40 @@
       color: #7a5e48;
     }
 
-    .chart-container {
+    .charts-container {
       background-color: #f9edd6;
       padding: 30px;
       border: 2px solid #b6a18b;
       border-radius: 20px;
       min-width: 600px;
       margin-bottom: 50px;
+      transform: scaleY(0);
+      transform-origin: top;       /* „Scharniere“ oben */
+      overflow: hidden;
+      opacity: 0;
+      transition: transform 600ms ease, opacity 400ms ease;
     }
 
-    #myChart {
+    .charts-container.visible {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+/*
+    .charts-container.hidden {
+      display:none 
+    }
+*/
+    #chart-supplier {
       width: 100%;
       height: 400px;
       display: block;
+      margin-bottom: 3rem;
+    }
+    #chart-buyer {
+      width: 100%;
+      height: 400px;
+      display: block;
+      margin-bottom: 3rem;
     }
     .results-container {
       gap: 2rem;
@@ -75,28 +96,59 @@
       margin-bottom: 10px;
       font-size: 1.5rem;
     }
+    #chart-sales {
+      width: 100%;
+      height: 400px;
+      display: block;
+      margin-bottom: 3rem
+    }
+    .chart-btn {
+      padding: 12px 32px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s;
+      background: #bc4749;
+      color:#fff;
+      font-size: 1.8rem;
+      border-radius: 24px;
+      border:none;
+      transition: transform 0.20s;
+      margin-bottom: 1rem
+    }
+ 
+    .chart-btn:hover {
+     background:#dc2f02;
+     transform: scale(1.05);
+
+    }
+
+    .count {
+      font-size: 1.5re;
+      color: #ffb703;
+      font-family: Impact
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <div id = "round_header" class="header" data-round-number ="{{round_number}}">Ergebnisse Runde {{round_number}}</div>
     <div class="results-container"> 
-      <div class="results">
+      <div class="results">  
         <div>
           <div><strong>Flohmarkt A</strong></div>
-          <div id="sup_num_A" data-suppliers-number-A ="{{suppliers_number_A}}">Verkäufer: {{suppliers_number_A}}</div>
-          <div>Käufer: 313</div>
-          <div>Umsatz: 5839 €</div>
-          <div>Käufer-Preis: 15 €</div>
-          <div>Verkäufer-Preis: {{stand_rental_A}} €</div>
+          <div>Verkäufer: <span class="count" data-target="{{suppliers_number_A}}">{{suppliers_number_A}}</span></div>
+          <div>Käufer:    <span class="count" data-target="{{buyers_number_A}}">{{buyers_number_A}}</span></div>
+          <div>Umsatz:    <span class="count" data-target="{{UmsatzA}}" data-suffix=" €">{{UmsatzA}}</span></div>
+          <div>Käufer-Preis:    <span class="count" data-target="{{entrance_fee_A}}" data-suffix=" €" data-round="0">{{entrance_fee_A}}</span></div>
+          <div>Verkäufer-Preis: <span class="count" data-target="{{stand_rental_A}}" data-suffix=" €" data-round="0">{{stand_rental_A}}</span></div>
         </div>
         <div>
           <div><strong>Flohmarkt B</strong></div>
-          <div id="sup_num_B" data-suppliers-number-B ="{{suppliers_number_B}}">Verkäufer: {{suppliers_number_B}}</div>
-          <div>Käufer: 246</div>
-          <div>Umsatz: 5382 €</div>
-          <div>Käufer-Preis: 17 €</div>
-          <div>Verkäufer-Preis: {{stand_rental_B}} €</div>
+          <div>Verkäufer: <span class="count" data-target="{{suppliers_number_B}}">{{suppliers_number_B}}</span></div>
+          <div>Käufer:    <span class="count" data-target="{{buyers_number_B}}">{{buyers_number_B}}</span></div>
+          <div>Umsatz:    <span class="count" data-target="{{UmsatzB}}" data-suffix=" €">{{UmsatzB}}</span></div>
+          <div>Käufer-Preis:    <span class="count" data-target="{{entrance_fee_B}}" data-suffix=" €" data-round="0">{{entrance_fee_B}}</span></div>
+          <div>Verkäufer-Preis: <span class="count" data-target="{{stand_rental_B}}" data-suffix=" €" data-round="0">{{stand_rental_B}}</span></div>
         </div>
       </div>
       <a href=" {% if last_round %}
@@ -110,19 +162,37 @@
          {% else %}
             weiter zur Runde {{ nxt_round }}
          {% endif %}
-        </button> 
+        </button>
       </a>
+      <button id="toggle-charts" class="chart-btn">
+              <i class="bi bi-bar-chart-line-fill"></i> Diagramme anzeigen
+      </button> 
     </div>
-    <div class="chart-container">
-      <canvas id="myChart"></canvas>
+    <div id = "charts-container-id" class="charts-container">
+      <h2>Anzahl der Käufer und Verkäufer</h2>
+      <canvas id="chart-supplier"></canvas>
+      <h2>Preise für Käufer und Verkäufer</h2>
+      <canvas id="chart-buyer"></canvas>
+      <h2>Umsätze</h2> 
+      <canvas id="chart-sales"></canvas> 
     </div>
   </div>
   <div id="suppliers_data" 
      data-suppliers-a="{{ suppliers_number_list_A|join:',' }}"  
      data-suppliers-b="{{ suppliers_number_list_B|join:',' }}"
-     data-prices-list-a = "{{ prices_list_A|join:',' }}"
-     data-prices-list-b = "{{ prices_list_B|join:',' }}">{{ prices_list_A }}
-</div>
+     data-supplier-prices-list-a = "{{ supplier_prices_list_A|join:',' }}"
+     data-supplier-prices-list-b = "{{ supplier_prices_list_B|join:',' }}">
+  </div>
+  <div id="buyers_data" 
+     data-buyers-a="{{ buyers_number_list_A|join:',' }}"  
+     data-buyers-b="{{ buyers_number_list_B|join:',' }}"
+     data-buyer-prices-list-a = "{{ buyer_prices_list_A|join:',' }}"
+     data-buyer-prices-list-b = "{{ buyer_prices_list_B|join:',' }}">
+  </div>
+  <div id="sales-data"
+    data-sales-a="{{ Umsatz_list_A|join:',' }}"
+    data-sales-b="{{ Umsatz_list_B|join:',' }}">
+  </div>
 </body>
 </html>
 <!--{{ suppliers_number_list_A|join:',' }}-->

@@ -5,7 +5,8 @@
 
 }
 .basket { 
-   font-size: 5rem; 
+   font-size: 5rem;
+   display: inline-block; will-change: transform;
 }
 
 .custom-modal21{
@@ -30,7 +31,7 @@
   animation-duration: 0.8s;
 }
 @keyframes boxIn {
-  from { opacity: 0; transform: scale(0.9);}
+  from { opacity: 0; transform: scale(0.5);}
   to { opacity: 1; transform: scale(1);}
 }
 
@@ -39,7 +40,7 @@
   letter-spacing: 2px;
   font-size: 3rem;
   color: #609140;
-  margin-top: 0;
+  margin-top: 0.8rem;
   margin-bottom: 15px;
 }
 
@@ -81,3 +82,4 @@
   color: #fffbe8;
   transform: scale(1.05);
 }
+

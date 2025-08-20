@@ -17,11 +17,19 @@
   });
    function toggleTooltip() {
     const tooltip = document.getElementById('tooltip-text');
-    const icon = document.getElementById('icon')
+    const icon = document.getElementById('icon23')
     tooltip.classList.toggle('show');
     icon.classList.toggle('show');
   }
 
-
+//Animate den Rad
+  const { animate, text, stagger,svg } = anime;
+      animate('.bi-gear-fill', {
+      rotate: { to: '1turn' },  // -1turn für Gegenrichtung
+      ease: 'linear',           // gleichmäßige Geschwindigkeit
+      duration: 2000,            // 2s pro Umdrehung (größer = langsamer)
+      loop: true,
+      delay:1000
+    });
 
 

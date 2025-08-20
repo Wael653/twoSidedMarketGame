@@ -1,0 +1,37 @@
+{% load static %}
+<div class = "overlay">
+    <div class = "container2">
+        <header class="header">
+          <!-- <i class="bi bi-trophy"></i> -->
+            <div class="trophy" aria-hidden="true">🏆</div>
+            <h1>Glückwunsch!</h1>
+            <div>Der Gewinner dieses Spiels ist </div>
+        </header>
+        <section>
+            
+            <div class="winner-name">
+                <i class="bi bi-star-fill"></i>
+                <span>{{winner}}</span>
+            </div>
+            <div class = "total-sales">
+                <div class = "sale"> 
+                    <div>Flohmarkt A </div>
+                    <div>{{sum_A}} €</div>
+                    <div>Gesamtumsatz</div>
+                </div>
+                <div class = "sale"> 
+                    <div>Flohmarkt B</div>
+                    <div>{{sum_B}} €</div>
+                    <div>Gesamtumsatz</div>
+                </div>
+             </div>
+        </section>
+        <footer>
+            <a href="{% url 'welcome' %}">
+                <button class="back">
+                    Spiel wiederholen
+                </button>
+            </a>
+        </footer>
+    </div>
+</div>

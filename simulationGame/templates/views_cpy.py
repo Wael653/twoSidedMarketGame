@@ -318,23 +318,9 @@ def calculate_buyers_number(request):
 
 def winner_view(request):
      Umsatz_list_A = request.session.get("Umsatz_list_A")
-     print("Umsatz_list_A: ", Umsatz_list_A)
-     sum_A = sum(Umsatz_list_A)
      Umsatz_list_B = request.session.get("Umsatz_list_B")
-     sum_B = sum(Umsatz_list_B)
-     context = {
-          'sum_A': sum_A,
-          'sum_B': sum_B,
-          'winner': winner
-     }
-     if sum_A > sum_B:
-          winner = "Flohmarkt A"
-          return render(request, 'winner_site.html', context)
-     elif sum_B < sum:
-          winner = "Flohmarkt B"
-          return render(request, 'winner_site.html', context)
-     else:
-          return render(request, 'draw_site.html', context)
+     return render(request, 'winner_site.html', {})
+     return HttpResponse("<h1>Der Gewinner ist Flohmarkt A</h1>")
      
 def calculate_buyer_score(request, buyer, market):
      omega = 0.63
@@ -370,15 +356,6 @@ def calculate_buyer_score(request, buyer, market):
   #   print("score: ", score)
     # score = pref_place 
      return score
-
-#def draw_view(request):
- #    return render(request, 'draw_site.html', {})
-def instructions_view(request):
-     return render(request, 'explanation_site.html', {})
-
-
-
-
 
 
 

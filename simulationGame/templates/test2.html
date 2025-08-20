@@ -23,6 +23,19 @@
 
   *{box-sizing:border-box}
   html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Nunito",system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 15% -10%, #fff4e1 0 40%, transparent 45%),
+      radial-gradient(900px 500px at 90% 0%, #ffe9c8 0 40%, transparent 45%),
+      linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    display:grid;
+    place-items:center;
+    padding:32px;
+  }
+
   .board{
     width:min(920px, 100%);
     background:var(--card);
@@ -41,7 +54,7 @@
     font-size:clamp(36px, 5.8vw, 56px);
     line-height:1.05;
     margin:0;
-    letter-spacing:.2px;a
+    letter-spacing:.2px;
     font-weight:800;
   }
   .subtitle{
@@ -193,7 +206,7 @@
 </style>
 </head>
 <body>
-<div class="overlay">
+
   <main class="board" role="main" aria-labelledby="title">
     <header class="header">
       <h1 id="title" class="title">Anleitung</h1>

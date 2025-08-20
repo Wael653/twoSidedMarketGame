@@ -21,13 +21,13 @@ class Buyer(models.Model):
     out_door_pf = models.IntegerField(
            validators=[
             MinValueValidator(0),
-            MaxValueValidator(5)
+            MaxValueValidator(8)
            ]
     )
     in_door_pf = models.IntegerField( default=0,
            validators=[
             MinValueValidator(0),
-            MaxValueValidator(5)
+            MaxValueValidator(8)
            ]
     )
 

@@ -1,5 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Willkommenseite{% endblock %}
 {% block content %}
 {% include "partials/welcome_modal.html" %}
+<script src="https://cdn.jsdelivr.net/npm/animejs@4.1.3/lib/anime.iife.min.js"></script>
+<script src="{% static 'js/welcome_script.js' %}" defer></script>
 {% endblock %}

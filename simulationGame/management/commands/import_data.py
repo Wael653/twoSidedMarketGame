@@ -12,7 +12,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         df_suppliers = pd.read_excel(options['excel_file'], sheet_name='ZB_Verkäufer2')
-        objekte = [
+        supplier_objs = [
             Supplier(
                 supplier_id=row['Verkäufer-ID'], 
                 willingness_to_pay=row['ZB_S'],
@@ -20,8 +20,9 @@ class Command(BaseCommand):
             )
             for _, row in df_suppliers.iterrows()
         ]
-        Supplier.objects.bulk_create(objekte, batch_size=200)
-        self.stdout.write(self.style.SUCCESS(f'{len(objekte)} Verkäufer wurden importiert!'))
+        Supplier.objects.all().delete()
+        Supplier.objects.bulk_create(supplier_objs, batch_size=200)
+        self.stdout.write(self.style.SUCCESS(f'{len(supplier_objs)} Verkäufer wurden importiert!'))
 
         df_buyers = pd.read_excel(options['excel_file'], sheet_name='ZB_Käufer2')
         buyer_objs = [
@@ -34,5 +35,6 @@ class Command(BaseCommand):
             )
             for _, row in df_buyers.iterrows()
         ]
+        Buyer.objects.all().delete()
         Buyer.objects.bulk_create(buyer_objs, batch_size=200)
         self.stdout.write(self.style.SUCCESS(f'{len(buyer_objs)} Käufer wurden importiert!'))

@@ -9,6 +9,9 @@ body {
     padding: 0;
     background-attachment: fixed;
     overflow-y: auto;
+  /*  display: flex;
+    align-items: center;
+    justify-content: center; */
 }
 /*
 h1 {
