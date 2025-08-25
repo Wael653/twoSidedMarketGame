@@ -7,9 +7,9 @@ class Supplier(models.Model):
     willingness_to_pay = models.FloatField()
     preference = models.CharField(max_length=1)
     travel_cost_to_A = models.FloatField(default=10, validators= [MinValueValidator(5),
-            MaxValueValidator(40)])
+            MaxValueValidator(30)])
     travel_cost_to_B = models.FloatField(default=10, validators= [MinValueValidator(5),
-            MaxValueValidator(40)])
+            MaxValueValidator(30)])
 
     def __str__(self):
         return f"ID:{self.supplier_id}, ZB:{self.willingness_to_pay}, Präferenz:{self.preference}"

@@ -6,36 +6,6 @@
   gap: 1rem;
 }
 
-.modal-content {
-  background: #f9edd6;
-  border: 2.5px solid #b6a18b;
-  box-shadow: 0 4px 8px #b9a88b;
-  padding: 36px 32px 36px 32px;
-  border-radius: 32px ;
-  width: 600px;
-  max-width: 95vw;
-  text-align: center;
-  animation-name: modalIn;
-  animation-duration: 0.8s;
-}
-/*
-.modal_header7 {
-  padding: 13px 38px 13px 38px;
-  border-radius: 22px;
-  background:#f9edd6;
-  font-size: 2.6rem;
-  color: black;
-  font-weight: bold; 
-  font-family:'Comic Sans MS';
-  text-align: center;
-  border: 2.5px solid #b6a18b; 
-  /*position:relative; */
-/*  letter-spacing: 2px;
-  width: fit-content;
-  animation-name: modalIn;
-  animation-duration: 0.8s;
-} 
-  */
 .results-row {
   display: flex;
   justify-content: space-around;

@@ -1,24 +1,21 @@
-<div class="round_header">Runde {{ runde }}</div>
-  <div class="runde-modal">
- <!--   <div class="runde-content"> -->
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <div class="round-wrap">
+    <div class="round_header">Runde {{ runde }}</div>
+    <div class="round-modal">
       <h2 class="flohmarkt-title">Flohmarkt {{ market }}</h2>
       <form class="form-content" method = "post">
         {% csrf_token %}
         <div class="input-row">
-       <!--     <span class="icon">  -->
-            <!-- Eintrittsgebühr Icon (Ticket) --> 
-      <!--     <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="4" y="10" width="26" height="14" rx="4" fill="#FFD966" stroke="#B89C7D" stroke-width="2"/><rect x="9" y="16" width="16" height="2" rx="1" fill="#B89C7D"/></svg> -->
-      <!--     </span>  -->
-          <label for="eintritt" class="runde-label">Eintrittsgebühr für Käufer</label>
-          <input type="number" class="runde-input" name = "eintritt" id = "eintritt" placeholder="max. 40 Euro" max="40" />
+          <label for="standmiete" class="runde-label">Standmiete für Verkäufer</label>
+          <input type="number" class="runde-input" name="standmiete" id= "standmiete" placeholder="max. 190 Euro" max="190" />
         </div>
         <div class="input-row">
-<!--        <span class="icon"> -->
-<!--         Standmiete Icon (Euro) -->
-<!--        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><text x="6" y="26" font-size="28" font-family="Arial" fill="#FFD966" stroke="#B89C7D" stroke-width="1">€</text></svg> -->
-<!--        </span> -->
-          <label for="standmiete" class="runde-label">Standmiete für Verkäufer</label>
-          <input type="number" class="runde-input" name="standmiete" id= "eintritt" placeholder="max. 190 Euro" max="190" />
+          <label for="eintritt" class="runde-label">Eintrittsgebühr für Käufer</label>
+          <input type="number" class="runde-input" name = "eintritt" id = "eintritt" placeholder="max. 40 Euro" max="40" />
         </div>
         <button type="submit" class="runde-btn" name= "submitButton">
           {% if market == "A" %}
@@ -28,5 +25,6 @@
           {% endif %}
         </button>
       </form>
+    </div>
   </div>
-<!--</div> -->
+</body>

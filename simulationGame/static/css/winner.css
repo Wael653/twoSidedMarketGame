@@ -26,8 +26,8 @@
     color: #7e5d4a;
 }
 .container2{
-    margin-top: 140px;
-    transform: scale(1.4); 
+    margin-top: 200px;
+    transform: scale(1.5); 
     padding:10px 15px 30px;
     display: flex;
     flex-direction: column;

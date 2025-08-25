@@ -1,28 +1,54 @@
-  /*
-  .modal-overlay { 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed; 
-    top: 90px; left: 0; right: 0; bottom: 0; 
-  } */
-  .round_header {
-    background: #fffbe7;
- /*   background-color:  #f7ecd7;  #f2e8cf; */
-    margin: 7vw auto 1rem auto;
-    font-family:'Comic Sans MS';
-    color: #bc4749;
-    font-size: 2.6rem;
-    font-weight: bold;
-    text-align: center;
-    border: 2.5px solid #b6a18b; 
-    width: fit-content; 
-    padding: 13px 38px 13px 38px;
-    border-radius: 22px;
-    animation-name: modalIn2;
-    animation-duration: 0.8s;
+:root {
+  --modal-width: clamp(240px, 90vw, 705px);
 }
-.runde-modal {
+.round-wrap{
+  width: var(--modal-width);
+  margin: 0 auto; 
+  container-type: inline-size;    
+  display: flex;
+  flex-direction: column;   
+  align-items: center;  
+  gap: clamp(0.8rem, 7cqw, 5rem);
+}
+
+.round_header {
+/*  transform: scale(1.3); */
+  /* Breite nicht fest vorgeben */
+  box-sizing: border-box;
+  display: block;
+  width: 50cqw; 
+  white-space: nowrap;            /* kein Zeilenumbruch im Header-Text */
+  max-width: 92vw;                /* Sicherheitskante auf sehr kleinen Screens */
+   margin-top: clamp(2rem, 15cqw, 4rem);
+  padding: clamp(0.5rem, 2cqw, 0.9rem) clamp(1rem, 4cqw, 1.6rem);
+
+  background: #fffbe7;
+  border: 2.5px solid #b6a18b;
+  border-radius: 22px;
+  text-align: center;
+
+  font-family: 'Comic Sans MS';
+  font-weight: bold;
+  color: #bc4749;
+  font-size: clamp(1.4rem, 6cqw, 3rem); /* bleibt weiterhin responsive */
+}
+
+.round-modal {
+/*  transform: scale(1.3); */
+   box-sizing: border-box;
+/*  transform: scale(1.2); */
+  width: 100%;
+  background: #fffbe7; 
+  border: 2px solid #b6a18b;
+  border-radius: 32px;
+  margin: 0;
+/*  padding: 2rem; */
+  padding: clamp(1rem, 7cqw, 2.3rem)  clamp(1rem, 8cqw, 3rem);   
+  text-align: center;
+   container-type: inline-size;
+}
+/*.round-modal {
+    transform: scale(1.3);
     background: #fffbe7;
     border: 2px solid #b6a18b;
     border-radius: 32px;
@@ -33,24 +59,21 @@
     text-align: center;
     animation-name: modalIn2;
     animation-duration: 0.8s;
-}
+} */
 @keyframes modalIn2 {
   from { opacity: 0; transform: scale(0.5);}
   to { opacity: 1; transform: scale(1);}
 }
 
 /* Titel */
-.flohmarkt-title {
+.flohmarkt-title {  
     color: #ff8800;
     font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.375rem, 8cqw , 3.6rem);                                                     
     font-weight: bold;
-    margin: 0px 0 2rem 0;
-    letter-spacing: 2px;
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 12px;
+    margin-bottom: clamp(1rem, 7cqw, 3.7rem);
+  /*  letter-spacing: 2px; */
+    text-align: center;
 }
 /*
 .flohmarkt-title::before {
@@ -65,15 +88,16 @@
 .input-row {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: 80%;
+ /*   justify-content: flex-start; 
+    align-items: stretch;  */
+/*    width: fit-content; */
  /*   margin: 12px 0 2px 0; */
-  /*  width: 100%;
+    width: 100%; 
 /*    max-width: 340px; */ 
 }
 .runde-label {
     color: #7e5d4a;
-    font-size: 1.4rem;
+    font-size: clamp(0.9rem, 7cqw, 1.8rem);
     font-family:'Merriweather';
     font-weight: 500;
     text-align: left;
@@ -82,12 +106,12 @@
 
 /* Input-Feld */
 .runde-input {
-    width: 100%;
-    max-width: 340px;
+    box-sizing: border-box;
+    height: 3.5rem;
     margin-bottom: 14px;
     font-size: 1.1rem;
-    padding: 8px 16px;
-    border: 2px solid #e5c78d;
+    padding: 0.5rem 1rem 0;
+    border: 2px solid #9c701a;
     border-radius: 16px;
     background-color: white;
     color: #856c4a;
@@ -104,18 +128,21 @@
 
 /* Button */
 .runde-btn {
+  margin: 1rem auto 0;
+  width: 80%;
     background:  #6e7f4d;
     color: #fffbe1;
   /*  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif; */
-    font-size: 1.6rem;
+    font-size: clamp(0.8rem, 6.5cqw, 2.3rem);
     border: none;
     border-radius: 24px;
-    padding: 14px 40px;
-    margin-top: 22px;
+    padding: clamp(0.6rem, 3.5cqw, 1rem) clamp(0.8rem, 5cqw, 1.6rem);
+/*    margin-top: 15px; */
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
+   /* width:90%; */
   /*  font-weight: bold; */
-    letter-spacing: 1px;
+    letter-spacing: clamp(0px, 0.2cqw, 1px);;
 }
 .runde-btn:hover {
     background:#8ba766;
@@ -125,22 +152,27 @@
 /* Form */
 .form-content {
     display: flex;
-    align-items: center;
     flex-direction: column; 
-    margin: 0 auto;
-    gap: 0.8rem
+    justify-content: space-evenly;
+    align-items: flex-start;
+   /* margin-left: 1rem; */
+   /* width: 70%; */
+    gap: 2.4rem;
 }
 .runde-input::placeholder {
+  font-size: clamp(0.9rem, 4cqw, 1.6rem);
   font-family: Arial;
   color: #888;       
-  opacity: 0.7;      
+  opacity: 0.7;
+
 }
+/*
 .info-icon {
-  display: inline-block;
+  display: inline-block; 
   margin-left: 6px;
   cursor: pointer;
   color: #444;
-  font-size: 16px;
+  font-size: clamp(0.8rem, 2vw, 1rem);
   border: 1px solid #aaa;
   border-radius: 50%;
   width: 18px;
@@ -150,3 +182,4 @@
   background-color: #f9f9f9;
   font-weight: bold;
 }
+  */
