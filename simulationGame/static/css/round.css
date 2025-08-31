@@ -1,5 +1,5 @@
 :root {
-  --modal-width: clamp(240px, 90vw, 705px);
+  --modal-width: clamp(280px, 80vw, 705px);
 }
 .round-wrap{
   width: var(--modal-width);
@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;   
   align-items: center;  
-  gap: clamp(0.8rem, 7cqw, 5rem);
+  gap: clamp(0.8rem, 4cqw, 4rem);
 }
 
 .round_header {
@@ -16,11 +16,10 @@
   /* Breite nicht fest vorgeben */
   box-sizing: border-box;
   display: block;
-  width: 50cqw; 
-  white-space: nowrap;            /* kein Zeilenumbruch im Header-Text */
-  max-width: 92vw;                /* Sicherheitskante auf sehr kleinen Screens */
-   margin-top: clamp(2rem, 15cqw, 4rem);
-  padding: clamp(0.5rem, 2cqw, 0.9rem) clamp(1rem, 4cqw, 1.6rem);
+  width: 40cqw; 
+  white-space: nowrap;            
+  margin-top: clamp(2rem, 15cqw, 4rem);
+  padding: clamp(0.8rem, 2.5cqw, 1.2rem) clamp(0.5rem, 4cqw, 1rem);
 
   background: #fffbe7;
   border: 2.5px solid #b6a18b;
@@ -30,7 +29,7 @@
   font-family: 'Comic Sans MS';
   font-weight: bold;
   color: #bc4749;
-  font-size: clamp(1.4rem, 6cqw, 3rem); /* bleibt weiterhin responsive */
+  font-size: clamp(1.4rem, 7cqw, 3rem);
 }
 
 .round-modal {
@@ -39,7 +38,7 @@
 /*  transform: scale(1.2); */
   width: 100%;
   background: #fffbe7; 
-  border: 2px solid #b6a18b;
+  border: 3px solid #b6a18b;
   border-radius: 32px;
   margin: 0;
 /*  padding: 2rem; */
@@ -69,11 +68,11 @@
 .flohmarkt-title {  
     color: #ff8800;
     font-family: 'Fredoka', 'Comic Sans MS', cursive, sans-serif;
-    font-size: clamp(1.375rem, 8cqw , 3.6rem);                                                     
+    font-size: clamp(1.375rem, 10cqw , 3.6rem);                                                     
     font-weight: bold;
-    margin-bottom: clamp(1rem, 7cqw, 3.7rem);
+    margin-bottom: clamp(1rem, 12cqw, 4.5rem);
   /*  letter-spacing: 2px; */
-    text-align: center;
+    text-align: center; 
 }
 /*
 .flohmarkt-title::before {
@@ -97,7 +96,7 @@
 }
 .runde-label {
     color: #7e5d4a;
-    font-size: clamp(0.9rem, 7cqw, 1.8rem);
+    font-size: clamp(1rem, 5.1cqw, 1.9rem);
     font-family:'Merriweather';
     font-weight: 500;
     text-align: left;
@@ -107,11 +106,11 @@
 /* Input-Feld */
 .runde-input {
     box-sizing: border-box;
-    height: 3.5rem;
-    margin-bottom: 14px;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem 0;
-    border: 2px solid #9c701a;
+    height: clamp(1rem, 10cqw, 3.5rem);
+   /* margin-bottom: 12cqw; */
+    font-size: clamp(0.9rem, 5.0cqw, 1.9rem);
+    padding: 0.1rem min(1rem, 3cqw) 0;
+    border: 3px solid #dab53e;
     border-radius: 16px;
     background-color: white;
     color: #856c4a;
@@ -122,13 +121,13 @@
     box-shadow: 0 2px 12px rgba(180,150,80,0.07);
 }
 .runde-input:focus {
-    border: 2.5px solid #f8d233;
+    border: 3px solid #f8d233;
     box-shadow: 0 4px 14px #f8d23344;
 }
 
 /* Button */
 .runde-btn {
-  margin: 1rem auto 0;
+  margin: min(1.6rem, 4.3cqw) auto 0;
   width: 80%;
     background:  #6e7f4d;
     color: #fffbe1;
@@ -157,10 +156,10 @@
     align-items: flex-start;
    /* margin-left: 1rem; */
    /* width: 70%; */
-    gap: 2.4rem;
+    gap: clamp(1rem, 7cqw, 2.6rem);
 }
 .runde-input::placeholder {
-  font-size: clamp(0.9rem, 4cqw, 1.6rem);
+  font-size: clamp(0.9rem, 4cqw, 1.8rem);
   font-family: Arial;
   color: #888;       
   opacity: 0.7;

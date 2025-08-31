@@ -1,4 +1,4 @@
-
+/*
   const { animate, text, stagger,svg } = anime;
 
   setTimeout(() => {
@@ -19,4 +19,4 @@
   });
 }, 1000);
 
-
+*/

@@ -4,60 +4,106 @@
   font-size: 5rem;
 
 }
-.basket { 
-   font-size: 5rem;
-   display: inline-block; will-change: transform;
+.basket {
+  
+font-size: clamp(3rem, 1.4rem + 10.667vw, 5rem);
+  
+display: inline-block;
+  
+will-change: transform;
 }
-
-.custom-modal21{
+/*
+.round-wrap{
+  width: var(--modal-width);
+  margin: 0 auto; 
+  container-type: inline-size;    
   display: flex;
-  align-items: center; 
-  justify-content:center; 
-  height: 100%;
+  flex-direction: column;   
+  align-items: center;  
+  gap: clamp(0.8rem, 4cqw, 4rem);
+}
+*/
+.custom-modal21{
+  width: clamp(240px, 80vw, 540px);
+  margin: 0 auto;
+  container-type: inline-size;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  min-height: 100dvh;
 }
 .custom-modal-content40 {
-  transform: scale(1.3);
-  width: 20%;
- /* max-width: 500px;
+  box-sizing: border-box;
+  /*  transform: scale(1.3); */
+  /*  width: clamp(280px, 80vw, 570px); */
+  width: 100%;
+  /*width: 80vw; */
+  /* max-width: 500px;
   min-width: 320px;
  /* margin: auto; */
+  /* padding: 2.3rem min(2.2rem, 0.2rem); */
   background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
   border: 2px solid #b6a18b;
   border-radius: 32px;
-  padding: 24px 40px 33px 40px;
- /* position: relative; */
-  font-family: 'Segoe UI', 'Comic Sans MS', cursive, sans-serif; 
+  /* position: relative; */
+  font-family: 'Segoe UI', 'Comic Sans MS', cursive, sans-serif;
   text-align: center;
   animation-name: boxIn;
   animation-duration: 0.8s;
 }
+
+.custom-modal-content40 {
+    padding: clamp(0.8rem, -0.552rem + 7.724vw, 2.2rem);
+}
+/*
+.custom-modal-content40 {
+    width: 570px;
+}
+*/
 @keyframes boxIn {
   from { opacity: 0; transform: scale(0.5);}
-  to { opacity: 1; transform: scale(1.3);}
+  to { opacity: 1; transform: scale(1);}
 }
 
 .willkommen-title {
+  /* font-size: clamp(2rem, 10.135cqw, 3.6rem); */
   font-family: 'Fredoka', sans-serif;
   letter-spacing: 2px;
-  font-size: 2.5rem;
+  /* font-size: min(3.6rem, 1.7rem); */
+  /* font-size: clamp(2.2rem, 0.848rem + 7.724vw, 3.6rem); */
   color: #609140;
-  margin-top: 0.8rem;
-  margin-bottom: 15px;
+  margin-top: clamp(0.5rem, 0.26rem + 1.6vw, 0.8rem);
+  margin-bottom: clamp(0.4rem, -0.03rem + 2.867vw, 0.938rem);
+}
+
+h1.willkommen-title {
+    font-size: max(1.6rem, 10.5cqw);
+}
+
+h1.willkommen-title {
+    /* font-size: min(10.135cqw, 3.6rem); */
 }
 
 .subtitle {
+  white-space: nowrap;
   font-family: 'Merriweather';
   color: #8e6d4f;
-  margin-bottom: 16px;
-  font-size: 1.6rem;
-  letter-spacing: 0.5px;
+  margin-bottom: clamp(0.6rem, -0.52rem + 7.467vw, 2rem);
+
+  /* font-size: max(1rem, 2rem); */
+  /* letter-spacing: 0.5px; */
 }
+
+h2.subtitle {
+ font-size: max(13.512px, 6cqw);
+}
+
+
 
 .info-text {
   color: #715c3a;
-  font-size: 1.5rem;
-  margin-bottom: 22px;
-  margin-bottom: 3rem;
+  font-size: 5.1cqw;
+  margin-bottom: clamp(1.4rem, 0.12rem + 8.533vw, 3rem)
 }
 
 .info-link {
@@ -67,15 +113,28 @@
 }
 
 .spiel-starten-btn {
-  padding: 16px 35px;
-  font-size: 1.6rem;
+  white-space: nowrap;
   background: #6e7f4d;
-  color: #f7ecd7;
+  color: white;
   border: none;
-  border-radius: 24px;
+  /* border-radius: min(24px,15px); */
   cursor: pointer;
   transition: transform 0.20s;
   font-family: inherit;
+  width: 45cqw;
+}
+
+button.spiel-starten-btn {
+    border-radius: clamp(0.938rem, 0.488rem + 3vw, 1.5rem);
+}
+
+button.spiel-starten-btn {
+    padding: clamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) clamp(1.25rem, 0.5rem + 5vw, 2.188rem);
+}
+
+button.spiel-starten-btn {
+  /*  font-size: clamp(1rem, 0.36rem + 4.267vw, 1.8rem); */
+      font-size: 5cqw
 }
 
 .spiel-starten-btn:hover {
