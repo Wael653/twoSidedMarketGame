@@ -1,15 +1,19 @@
 :root {
-  --modal-width: clamp(280px, 80vw, 705px);
+  --modal-width: clamp(240px, 80vw, 540px);
 }
 .round-wrap{
   width: var(--modal-width);
-  margin: 0 auto; 
-  container-type: inline-size;    
+  margin: 0 auto;
+  container-type: inline-size;
   display: flex;
-  flex-direction: column;   
-  align-items: center;  
-  gap: clamp(0.8rem, 4cqw, 4rem);
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.8rem, 3.2cqw, 2rem);
+  justify-content: flex-start;
+  min-height: 100dvh;
 }
+
+.round-wrap {}
 
 .round_header {
 /*  transform: scale(1.3); */

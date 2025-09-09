@@ -12,6 +12,7 @@ display: inline-block;
   
 will-change: transform;
 }
+
 /*
 .round-wrap{
   width: var(--modal-width);
@@ -46,7 +47,7 @@ will-change: transform;
   border: 2px solid #b6a18b;
   border-radius: 32px;
   /* position: relative; */
-  font-family: 'Segoe UI', 'Comic Sans MS', cursive, sans-serif;
+  font-family: Arial;
   text-align: center;
   animation-name: boxIn;
   animation-duration: 0.8s;

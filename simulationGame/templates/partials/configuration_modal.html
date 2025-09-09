@@ -1,6 +1,10 @@
-{% load static %}
-<div id="konfiguration-modal" class="custom-modal21">
-  <div class="custom-modal-content">
+{#{% load static %} #}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+<div id="konfiguration-modal" class="custom-modal22">
+  <div class="custom-modal-content"> 
     <div class="modal-header">
       <i class="bi bi-gear-fill"></i>
       <h1 class="modal-title">Spiel konfigurieren</h1>
@@ -11,9 +15,11 @@
     <form method="post"> 
       {% csrf_token %}
       <div class="modal-row6">
-        <i class="bi bi-clock-fill"></i>   
-        <label class="option-label5">Rundenanzahl:</label>
-        <select name="game_rounds_number" class="modal-select">
+        <div class="wrap-rounds-number">
+          <i class="bi bi-clock-fill"></i>   
+          <label class="option-label5">Rundenanzahl:</label>
+        </div>
+        <select id= "dynamicSelect0" name="game_rounds_number" class="modal-select">
           <option value="">wählen</option>
           <option value="3">3</option>
           <option value="5">5</option>
@@ -21,30 +27,34 @@
           <option value="15">15</option>
           <option value="20">20</option>
         </select>
-      </div>
-      <div class="modal-row6">
-        <i class = "bi bi-basket-fill"></i>
-        <label class="option-label5">Wechelseitiger Effekt:</label>
-        <select id="dynamicSelect" onchange="adjustWidth(this)"name="cross_side" class="modal-select invisible">
-          <option value="">wählen</option>
-          <option value="option_1">Verkäufer-Effekt: groß, Käufer-Effekt: klein</option>
-          <option value="option_2">Verkäufer-Effekt: klein, Käufer-Effekt: groß</option>
-          <option value="option_3">Gleiche Effekte auf Verkäufer- und Käuferseite</option>
-        </select>
+      </div> 
+    <!--  Zweite Zeile--> 
+      <div class="wrap-second-row"> 
+        <div class="modal-row6">
+          <div class="wrap-cross-side">
+            <i class = "bi bi-basket-fill"></i>
+            <label class="option-label5">Wechelseitiger Effekt:</label>
+          </div>
+          <select id="dynamicSelect" onchange="adjustWidth(this)"name="cross_side" class="modal-select">
+            <option value="">wählen</option>
+            <option value="option_1">Verkäufer-Effekt: groß, Käufer-Effekt: klein</option>
+            <option value="option_2">Verkäufer-Effekt: klein, Käufer-Effekt: groß</option>
+            <option value="option_3">Gleiche Effekte auf Verkäufer- und Käuferseite</option>
+          </select>
+        </div>
         <div class="tooltip-wrapper">
           <i id ="icon23" class="bi bi-exclamation-circle info-icon23" onclick="toggleTooltip()"></i>
           <div id="tooltip-text" class="tooltip-text">
-             <strong>Wechselseitiger Effekt:</strong><br>
+            <strong>Wechselseitiger Effekt:</strong><br>
               Dieser beschreibt, wie die Anzahl der Individuellen auf Käufer- und Verkäuferseite sich gegenseitig beeinflussen:
-             <ul>
+            <ul>
               <li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer weniger.</li>
               <li><b>Option 2:</b> Käufer hat starken Einfluss, Verkäufer weniger.</li>
               <li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich stark.</li>
-             </ul>
-          </div>
+            </ul>
+          </div>       
         </div>
-      </div>
-      
+      </div> 
       <button type="submit" class="simulation-start-btn">Simulation starten</button>
     </form> 
        {% if error %}
@@ -53,3 +63,4 @@
        {% endif %} 
   </div> 
 </div>
+</body>

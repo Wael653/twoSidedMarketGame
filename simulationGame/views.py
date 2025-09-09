@@ -326,29 +326,10 @@ def winner_view(request):
      sum_A = sum(Umsatz_list_A)
      Umsatz_list_B = request.session.get("Umsatz_list_B")
      sum_B = sum(Umsatz_list_B)
-     if sum_A > sum_B:
-          winner = "Flohmarkt A"
-          context = { 
-          'sum_A': sum_A,     
-          'sum_B': sum_B,
-          'winner': winner
-           }
-          return render(request, 'winner_site.html', {})
-     elif sum_B < sum_A:
-          winner = "Flohmarkt B"
-          context = {
-          'sum_A': sum_A,
-          'sum_B': sum_B,
-          'winner': winner
-     }
-          return render(request, 'winner_site.html', {})
-     else:
-          context = {
-          'sum_A': sum_A,
-          'sum_B': sum_B,
-          'winner': 0
-     }
-          return render(request, 'winner_site.html', {})
+     winner = "Flohmarkt A" if sum_A > sum_B else 'Flohmarkt B'
+     if sum_A == sum_B:
+          return render(request, 'draw_site.html', {'sum_A':sum_A})
+     return render(request, 'winner_site.html', {'sum_A':sum_A, 'sum_B':sum_B, 'winner': winner})
       
      
 def calculate_buyer_score(request, buyer, market):
