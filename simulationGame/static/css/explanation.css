@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  /*  place-items:center; */
-/*    padding:20px 16px; */
 }
 .header > h1, .header > div  {
     font-family: Sans-serif;
