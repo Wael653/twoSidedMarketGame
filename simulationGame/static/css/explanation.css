@@ -9,5 +9,7 @@
     margin-bottom: 0.5rem;
 }
 button.btn-instruction {
-    font-size:  2.5rem;
+    font-size:  5cqw;
+    width: 45cqw;
+    padding: clamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) clamp(1.25rem, 0.5rem + 5vw, 2.188rem);
 }

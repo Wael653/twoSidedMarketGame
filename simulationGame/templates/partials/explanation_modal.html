@@ -13,7 +13,6 @@
     --bg-2:#E8B971;
     --card:#F7E6C8;
     --text:#3A2D1F;
-    --muted:#6c584c;
     --accent:#2E7D32;
     --accent-2:#1B5E20;
     --bullet:#614a36;
@@ -38,20 +37,20 @@
   .header{
     display:flex;
     flex-direction: column;
-    gap:1rem;
+    gap:3cqw;
     text-align:center;
     margin:6px 0 8px;
   }
   .title{
-    font-size: 3.5rem;
+    font-size: max(22px,9cqw);
     line-height:1.05;
     margin:0;
     letter-spacing:.2px;
     font-weight:800;
   }
   .subtitle{
-    font-size:clamp(18px, 2.3vw, 26px);
-    color:var(--muted);
+    font-size:clamp(8.04px, 4cqw, 19px);
+    color:#6c584c;
     margin:0.35rem 0 0.2rem;
     font-weight:700;
   }
@@ -128,8 +127,8 @@
 .arrow .left{transform:scaleX(-1)}
 
   .rules{
-    margin:18px auto 10px;
-    font-size:clamp(18px, 2.1vw, 22px);
+    margin:3cqw auto 4cqw;
+    font-size:clamp(0.688rem, 0.388rem + 2vw, 1.063rem);
     line-height:1.55;
     width:min(780px, 100%);
     color: #7e5d4a;
@@ -238,7 +237,7 @@
   /*transform-origin: top center; */
     transform: scale(1);
   /*  width: 40%; */
-    padding: 30px 50px 30px;
+    padding: 5.5cqw clamp(0.75rem, -0.15rem + 6vw, 1.875rem) 5.5cqw;
     margin-top: 80px;
     width: 100%;
     box-sizing: border-box;
@@ -281,6 +280,9 @@
   avatar {
     width: 30cqw;
     height: 30cqw;
+  }
+  .rules li {
+    padding-left: 0rem;
   }
 }
 }
