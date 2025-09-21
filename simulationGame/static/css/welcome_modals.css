@@ -25,7 +25,7 @@ will-change: transform;
 }
 */
 .custom-modal21{
-  width: clamp(240px, 80vw, 540px);
+  width: var(--modal-width);
   margin: 0 auto;
   container-type: inline-size;
   display: flex;
@@ -42,7 +42,6 @@ will-change: transform;
   /* max-width: 500px;
   min-width: 320px;
  /* margin: auto; */
-  /* padding: 2.3rem min(2.2rem, 0.2rem); */
   background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
   border: 2px solid #b6a18b;
   border-radius: 32px;

@@ -1,6 +1,3 @@
-:root {
-  --modal-width: clamp(240px, 80vw, 540px);
-}
 .round-wrap{
   width: var(--modal-width);
   margin: 0 auto;

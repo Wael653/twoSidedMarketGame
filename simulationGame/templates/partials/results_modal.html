@@ -9,11 +9,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 20px;
+      container-type: inline-size;
       animation-name: boxConfIn;
       animation-duration: 0.8s;
-      gap: 4rem;
-      padding-top: 5rem
+      gap: 5.2cqw;
+    /*  padding-top: 5rem */
+      min-height: 100dvh;
+      margin: 0 auto;
+      max-width: 540px;
+   /*   width: var(--modal-width); */
     }
     @keyframes boxConfIn {
   from { opacity: 0; transform: scale(0.5);}
@@ -81,13 +85,14 @@
       margin-bottom: 3rem;
     }
     .results-container {
+      box-sizing: border-box;
       transform: scale(1.2);
       gap: 2rem;
       background-color: #f9edd6;
       border: 2px solid #b6a18b;
       border-radius: 32px;
-      padding: 30px;
-      width: 600px;
+      padding: clamp(0.8rem, -0.552rem + 7.724vw, 2.2rem);
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
