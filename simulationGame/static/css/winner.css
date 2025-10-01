@@ -6,29 +6,25 @@
 /*    padding:20px 16px; */
 }
 
-.header > h1, .header > div  {
+.header-winner > h1, .header-winner > div  {
     font-family: Sans-serif;
     color: #7e5d4a;
-    margin-bottom: 0.5rem;
+    margin-bottom: min(5.5cqw,1rem);
 }
 
-.header {
+.header-winner {
     text-align: center;
 }
-.trophy {
-/*    background-color: yellow; */
-    font-size: 5rem;
-    color: #7e5d4a;
-}
+.trophy {/*    background-color: yellow; */font-size: 6rem;color: #7e5d4a;}
 .bi-trophy {
 /*    background-color: yellow; */
     font-size: 5rem;
     color: #7e5d4a;
 }
 .container2{
-    margin-top: 200px;
-    transform: scale(1.5); 
-    padding:10px 15px 30px;
+    margin-top: 7cqw;
+    /*  transform: scale(1.5); */
+    padding: 7.5cqw 7cqw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,80 +32,84 @@
     border: 2px solid #b6a18b;
     background: #f9edd6;
     border-radius: 24px;
-    width: 20%; 
+    width: 100%;
     animation-name: modalIn;
-    animation-duration: 0.8s; 
+    animation-duration: 0.8s;
+    box-sizing: border-box;
 }
   @keyframes modalIn {
      from { opacity: 0; transform: scale(0.5);}
-    to { opacity: 1; transform: scale(1.4);}
+    to { opacity: 1; transform: scale(1);}
 }
 
 .winner-name {
-    border: 1px solid ;
+    border: 1px solid;
     text-align: center;
-    width: 12rem;
-    margin: auto ;
+    width: 70cqw;
+    margin: auto;
     padding: 10px 10px;
     border-radius: 30px;
     margin-bottom: 18px;
     background-color: #6a994e;
     border: none;
-    color:aliceblue ;
+    color:aliceblue;
 }
 .winner-name > span {
     font-family: sans-serif;
     font-weight: bold;
     letter-spacing: 0.1rem;
-    font-size: 1.2rem;
+    font-size: 8cqw;
     margin-left: 0.4rem;
+    white-space: nowrap;
 }
 .total-sales {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 1.2rem;
 }
 .sale {
-    padding: 10px 18px;
+    padding: 10px 10px;
     border: 1px solid black;
     border-radius: 12px;
     background: white;
+    width: 32cqw;
 }
 
 .sale > div {
     font-family: sans-serif;
+    font-size: 4.8cqw;
 }
 .sale > div:first-child {
     font-family: sans-serif;
     color: #7e5d4a;
+    font-size: 5cqw;
 }
 
 .sale > div:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 6cqw;
     font-family: sans-serif;
     color: #283618;
     font-weight: bolder;
-    
 }
 
 .bi-star-fill {
-    font-size: 1.4rem;
+    font-size: 8cqw;
     color: #ffb703;
     margin-left: 0.2rem;
 }
 
 button.back {
-    padding: 14px 30px;
-    border-radius: 20px;
+    padding: 3.8cqw 6cqw;
+    border-radius: 24px;
     background-color: #6e7f4d;
-    font-size: 1.6rem;
+    font-size: 8cqw;
     color: white;
     border: none;
     transition: background 0.2s, transform 0.15s;
     cursor: pointer;
-
+    margin-top: 2cqw;
 }
 
 button.back:hover {

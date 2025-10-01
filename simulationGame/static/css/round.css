@@ -13,53 +13,41 @@
 .round-wrap {}
 
 .round_header {
-/*  transform: scale(1.3); */
+  /*  transform: scale(1.3); */
   /* Breite nicht fest vorgeben */
   box-sizing: border-box;
   display: block;
-  width: 40cqw; 
-  white-space: nowrap;            
-  margin-top: clamp(2rem, 15cqw, 4rem);
+  /* width: 40cqw; */
+  white-space: nowrap;
+  /* margin-top: clamp(2rem, 15cqw, 4rem); */
   padding: clamp(0.8rem, 2.5cqw, 1.2rem) clamp(0.5rem, 4cqw, 1rem);
-
   background: #fffbe7;
   border: 2.5px solid #b6a18b;
   border-radius: 22px;
   text-align: center;
-
   font-family: 'Comic Sans MS';
   font-weight: bold;
   color: #bc4749;
   font-size: clamp(1.4rem, 7cqw, 3rem);
-}
+  animation-name: boxIn;
+  animation-duration: 0.8s;
+  margin-top: 7cqw;
+  }
 
 .round-modal {
-/*  transform: scale(1.3); */
-   box-sizing: border-box;
-/*  transform: scale(1.2); */
+  box-sizing: border-box;
   width: 100%;
-  background: #fffbe7; 
+  background: #fffbe7;
   border: 3px solid #b6a18b;
   border-radius: 32px;
   margin: 0;
-/*  padding: 2rem; */
-  padding: clamp(1rem, 7cqw, 2.3rem)  clamp(1rem, 8cqw, 3rem);   
+  padding: clamp(1rem, 7cqw, 2.3rem)  clamp(1rem, 8cqw, 3rem);
   text-align: center;
-   container-type: inline-size;
+  container-type: inline-size;
+  animation-name: boxIn;
+  animation-duration: 0.8s;
 }
-/*.round-modal {
-    transform: scale(1.3);
-    background: #fffbe7;
-    border: 2px solid #b6a18b;
-    border-radius: 32px;
-    padding: 40px 32px 44px 32px;
-    width: 410px;
-    max-width: 97vw;
-    margin: 0 auto;
-    text-align: center;
-    animation-name: modalIn2;
-    animation-duration: 0.8s;
-} */
+
 @keyframes modalIn2 {
   from { opacity: 0; transform: scale(0.5);}
   to { opacity: 1; transform: scale(1);}
@@ -108,8 +96,8 @@
 .runde-input {
     box-sizing: border-box;
     height: clamp(1rem, 10cqw, 3.5rem);
-   /* margin-bottom: 12cqw; */
-    font-size: clamp(0.9rem, 5.0cqw, 1.9rem);
+    /* margin-bottom: 12cqw; */
+    font-size: 5cqw;
     padding: 0.1rem min(1rem, 3cqw) 0;
     border: 3px solid #dab53e;
     border-radius: 16px;
@@ -130,19 +118,19 @@
 .runde-btn {
   margin: min(1.6rem, 4.3cqw) auto 0;
   width: 80%;
-    background:  #6e7f4d;
-    color: #fffbe1;
+  background:  #6e7f4d;
+  color: #fffbe1;
   /*  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif; */
-    font-size: clamp(0.8rem, 6.5cqw, 2.3rem);
-    border: none;
-    border-radius: 24px;
-    padding: clamp(0.6rem, 3.5cqw, 1rem) clamp(0.8rem, 5cqw, 1.6rem);
-/*    margin-top: 15px; */
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-   /* width:90%; */
+  font-size: max(0.8rem, 6.5cqw);
+  border: none;
+  border-radius: 24px;
+  padding: 3.5cqw 5cqw;
+  /*    margin-top: 15px; */
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  /* width:90%; */
   /*  font-weight: bold; */
-    letter-spacing: clamp(0px, 0.2cqw, 1px);;
+  letter-spacing: clamp(0px, 0.2cqw, 1px);
 }
 .runde-btn:hover {
     background:#8ba766;
@@ -165,6 +153,17 @@
   color: #888;       
   opacity: 0.7;
 
+}
+
+@media(max-width: 520px) {
+.runde-input {
+  border: 2px solid #dab53e;
+}
+}
+@media(max-width: 390px) {
+.runde-input {
+  border: 1px solid #dab53e;
+}
 }
 /*
 .info-icon {

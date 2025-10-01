@@ -295,12 +295,12 @@ def calculate_buyers_number(request):
           if i == 10 :
                pass
              #  break
-          print("buyer: ", {i+1})
+       #   print("buyer: ", {i+1}) 
           scoreA_buyer = round(calculate_buyer_score(request, buyer, market= "A"), 2)
-          print("scoreA: ", scoreA_buyer)
+       #   print("scoreA: ", scoreA_buyer)
           scoreB_buyer = round(calculate_buyer_score(request, buyer, market= "B"), 2) 
-          print("scoreB: ", scoreB_buyer)
-          print("************")
+      #    print("scoreB: ", scoreB_buyer)
+      #    print("************")
           i = i+1
           if scoreA_buyer <= 0 and scoreB_buyer <= 0:
                continue

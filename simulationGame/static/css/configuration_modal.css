@@ -93,13 +93,11 @@ i.bi.bi-gear-fill {
   margin-right: 12px;
 } */
 
-h1.modal-title {
-    /* font-size: 2.6rem; */
-}
+
 .modal-desc {
   font-family: sans-serif;
   text-align: start;
-  margin-bottom: 25px;
+  margin-bottom: 5.3cqw;
   color: #7e5d4a;
   font-size: min(4cqw,1.25rem);
   font-weight: bold;
@@ -112,7 +110,7 @@ h1.modal-title {
     /* gap: 23cqw; */
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem; 
+    margin-bottom: 7.8cqw;
     min-width: 0;
     width: 93%;
     /* width: 100%; */
@@ -221,10 +219,10 @@ select#dynamicSelect {
   background: #6e7f4d;
   color: #fffbe1;
   font-family: Arial;/*'Comic Sans MS';*/
-  font-size: min(1.6rem,5cqw);
+  font-size: 5cqw;
   border: none;
   border-radius: 24px;
-  padding: 16px 42px;
+  /* padding: 16px 42px; */
   cursor: pointer;
   margin: 0 auto;
   margin-top: clamp(1.4rem, 0.12rem + 8.533vw, 3rem);
@@ -272,7 +270,7 @@ button.simulation-start-btn {paddingclamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) c
   opacity: 0;
   pointer-events: none;
   max-height: 0;
-  transition: max-height .7s ease, opacity .3s ease;
+  transition: max-height 0.7s ease, opacity 0.3s ease;
 }
 
 .tooltip-text.show {
@@ -304,7 +302,7 @@ button.simulation-start-btn {paddingclamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) c
   z-index: 2000;
   transform: translate(-50%, 30px);
  /* transform: translateX(-23px) translateY(30px); */
-  transition: max-height 0.7s ease-in-out, opacity 0.5s ease-out;
+  transition: max-height 0.7s ease-in-out, opacity 0.3s ease-out;
  }
 
 .info-icon23.show::after {
@@ -319,11 +317,6 @@ button.simulation-start-btn {paddingclamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) c
   /* display: inline-block; */
 }
 
-.tooltip-wrapper {
-    /* flex: 1 1 auto; */
-}
-
-.tooltip-wrapper {}
 /*
 .row2-wrap .tooltip-wrapper{
   position: absolute;
@@ -356,50 +349,7 @@ button.simulation-start-btn {paddingclamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) c
 .wrap-second-row .modal-row6 {
   margin-bottom: 0;
 }
-/*
-@media (max-width: 420px) {
-  .modal-row6{
-    flex-direction: column;
-    gap: clamp(.4rem, 2cqw, .8rem);
-  }
-}
-  */
 
-
-/*
-@media (max-width: 400px) {
-.custom-modal-content {
-  padding: 17px;
-}
-.modal-select {
-  flex: 0 0 100px;
-}
-}
-@media (max-width: 360px) {
-  .modal-select {
-  flex: 0 0 70px;
-}
-}
-*/
-/*
-@media (max-width: 480px) {
- .modal-select {
-  flex: 0 0 100px;
-}
-}
-@media (max-width: 420px) {
-  .wrap-second-row {
-    flex-direction: column;
-  }
-  .modal-row6 {
-    flex-direction: column;
-  }
-  .modal-select {
-    flex-basis: auto;
-    width: 100%;
-  }
-}
-*/
 @media (max-width: 420px) {
   .modal-row6 {
     flex-direction: column;
@@ -420,4 +370,5 @@ button.simulation-start-btn {paddingclamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) c
     max-width: 100%;
     /* width: 8rem; */
   }
+  
 }

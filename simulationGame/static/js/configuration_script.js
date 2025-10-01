@@ -70,7 +70,6 @@ window.addEventListener('resize', () => {
 
 
 //Animate den Rad
-/*
   const { animate, text, stagger,svg } = anime;
       animate('.bi-gear-fill', {
       rotate: { to: '1turn' },  // -1turn für Gegenrichtung
@@ -80,8 +79,7 @@ window.addEventListener('resize', () => {
       delay:1000
     });
 
-*/
-/*
+
 function positionTooltip(tip) {
   // reset auf Standard (zentriert)
   tip.classList.remove('align-start','align-end');
@@ -113,6 +111,3 @@ function positionTooltip(tip) {
     tip.style.maxWidth = Math.min(vwMax, spaceRight) + 'px';
   }
 }
-
-// bei Resize neu ausrichten
-*/

@@ -139,6 +139,14 @@ function initChartsOnce() {
                             ]
                         }
                     }
+                },
+                legend: {
+                    labels: {
+                        font: {
+                   //         size: Math.max(0, Math.round(window.innerWidth * 0.017))
+                        }
+                    }
+
                 }
             }
         }

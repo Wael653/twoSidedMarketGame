@@ -1,18 +1,20 @@
 :root {
   --modal-width: clamp(240px, 80vw, 540px);
+  --modal-reults-width: clamp(300px, 80vw, 600px);
+  --modal-winner-width: clamp(240px, 80vw, 340px);
 }
 body {
     background-image: url('../images/background.jpg'); 
     background-size: cover;        /* Bild füllt den ganzen Bildschirm */
     background-repeat: no-repeat;  /* Bild wird nicht wiederholt */
     background-position: center;   /* Bild wird zentriert */
-    height: 100vh;            /* mindestens volle Höhe */
+    height: 100%;            /* mindestens volle Höhe */
  /*   width: 100%;                  /* volle Breite */
     margin: 0;              
     padding: 0;
     background-attachment: fixed;
     overflow-y: auto;
-    overflow-y:auto;
+    overflow-x: hidden;
   /*  display: flex;
     align-items: center;
     justify-content: center; */
