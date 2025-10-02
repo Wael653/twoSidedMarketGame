@@ -1,7 +1,7 @@
 :root {
   --modal-width: clamp(240px, 80vw, 540px);
   --modal-reults-width: clamp(300px, 80vw, 600px);
-  --modal-winner-width: clamp(240px, 80vw, 340px);
+  --modal-winner-width: clamp(240px, 80vw, 360px);
 }
 body {
     background-image: url('../images/background.jpg'); 

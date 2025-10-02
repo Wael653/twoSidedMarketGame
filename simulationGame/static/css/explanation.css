@@ -13,3 +13,44 @@ button.btn-instruction {
     width: 45cqw;
     padding: clamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) clamp(1.25rem, 0.5rem + 5vw, 2.188rem);
 }
+
+  .header{
+    display:flex;
+    flex-direction: column;
+    gap:3cqw;
+    text-align:center;
+    /* margin:6px 0 8px; */
+    box-shadow: 0 2px 8px rgba(124, 94, 72, 0.09);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #b6a18b;
+    background: #f9edd6;
+    border-radius: 32px;
+    /* width: 20%; */
+    animation-name: modalIn;
+    animation-duration: 0.8s;
+    gap: 1rem;
+}
+  @keyframes modalIn {
+     from { opacity: 0; transform: scale(0.5);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+.header-explanation {
+    border: none;
+    background: #fff8e1;
+    margin-top: 0;
+}
+
+.card-explanation {  
+    margin-top: 0;             
+    transform: scale(1);
+    padding: 6.2cqw clamp(0.75rem, -0.15rem + 6vw, 1.875rem) 6.2cqw;
+    margin-top: 14cqw;
+    width: 100%;
+    box-sizing: border-box;
+}

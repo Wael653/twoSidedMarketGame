@@ -106,7 +106,6 @@ h2.subtitle {
   background: #6e7f4d;
   color: white;
   border: none;
-  /* border-radius: min(24px,15px); */
   cursor: pointer;
   transition: transform 0.20s;
   font-family: inherit;
@@ -114,15 +113,14 @@ h2.subtitle {
 }
 
 button.spiel-starten-btn {
-    border-radius: clamp(0.938rem, 0.488rem + 3vw, 1.5rem);
+    border-radius: 24px;
 }
 
 button.spiel-starten-btn {
-    padding: 4.6cqw;
+    padding: clamp(0.5rem, 0.15rem + 2.333vw, 0.938rem) clamp(1.25rem, 0.5rem + 5vw, 2.188rem);
 }
 
 button.spiel-starten-btn {
-  /* font-size: clamp(1rem, 0.36rem + 4.267vw, 1.8rem); */
   font-size: 5cqw
 }
 

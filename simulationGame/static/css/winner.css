@@ -1,10 +1,6 @@
-.overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  /*  place-items:center; */
-/*    padding:20px 16px; */
-}
+.overlay-winner {
+    width: var(--modal-winner-width);
+    }
 
 .header-winner > h1, .header-winner > div  {
     font-family: Sans-serif;
@@ -22,7 +18,7 @@
     color: #7e5d4a;
 }
 .container2{
-    margin-top: 7cqw;
+    /* margin-top: 7cqw; */
     /*  transform: scale(1.5); */
     padding: 7.5cqw 7cqw;
     display: flex;
@@ -31,7 +27,7 @@
     justify-content: center;
     border: 2px solid #b6a18b;
     background: #f9edd6;
-    border-radius: 24px;
+    border-radius: 32px;
     width: 100%;
     animation-name: modalIn;
     animation-duration: 0.8s;

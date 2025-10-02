@@ -367,10 +367,11 @@ def calculate_buyer_score(request, buyer, market):
     # score = pref_place 
      return score
 
-#def draw_view(request):
- #    return render(request, 'draw_site.html', {})
+def draw_view(request):
+     return render(request, 'draw_site.html', {})
 def instructions_view(request):
      return render(request, 'explanation_site.html', {})
+
 
 
 

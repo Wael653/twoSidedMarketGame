@@ -171,7 +171,7 @@ font-size: max(3cqw, 0.8rem);
       font-family:'Comic Sans MS';
       background-color: #f9edd6;
       padding: 2.5cqw clamp(0.5rem, 4cqw, 1rem);
-      border-radius: 25px;
+      /* border-radius: 25px; */
       font-size: 5.4cqw;
       font-weight: bold;
       color: #bc4749;
@@ -182,6 +182,8 @@ font-size: max(3cqw, 0.8rem);
     text-align: center;
     border-radius: 22px;
     /* width: 30cqw; */
+    background: #f9edd6;
+    /* border: none; */
   }
   .header-winner h1 {
    font-size: 9.5cqw;

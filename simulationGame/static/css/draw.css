@@ -1,4 +1,4 @@
-.card {
+/*.card {
     margin-top: 140px;
     transform: scale(1.4);
     padding:35px 25px 35px;
@@ -13,33 +13,41 @@
     animation-name: modalIn;
     animation-duration: 0.8s;
     gap: 1rem;
-
 }
+    */
 .header2 {
     font-weight: bolder;
-    font-size: 2.2rem;
+    font-size: max(1rem,10cqw);
     font-family: Sans-serif;
     color: #ff9100;   /*#7e5d4a; */
-    margin-bottom: 1rem; 
+    /* margin-bottom: 1rem; */
 }
 .info2 {
     text-align: center;
     font-family: sans-serif;
-    margin-bottom: 1.8rem;
-   
+    margin-bottom: 1.2rem;
+    font-size: 5cqw;
 }
-.draw-btn {
-    margin-top: 20px;
+Button.draw-btn {
+    /* margin-top: 20px; */
+    font-size: 6cqw;
+    padding: 4cqw 5cqw;
 }
 
 .draw-sale {
-    width: 50%;
+    width: 45%;
     margin: auto;
     text-align: center;
 }
 .draw-sale > div:first-child {
-    font-size: 1.8rem;
+    font-size: 8cqw;
 }
 .draw-sale > div:nth-child(2) {
-    font-size: 1.5rem;
+    font-size: 5cqw;
+}
+
+.card-drawing {/* width: 50%; */padding: 7cqw;}
+
+.overlay-drawing {
+    width: var(--modal-winner-width);
 }
