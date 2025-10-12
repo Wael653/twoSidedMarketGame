@@ -9,7 +9,7 @@ function initChartsOnce() {
     let roundNumber = document.getElementById("round_header")
     data = roundNumber.dataset
     for (let i = 1; i < Number(data.roundNumber) + 1; i++) {
-    roundsLabel.push("Runde " + i);
+    roundsLabel.push(gettext("Runde") + " " + i);
     } 
     /** Extrahiere Supplierdaten */
     const suppliersData = document.getElementById("suppliers_data");
@@ -60,8 +60,14 @@ function initChartsOnce() {
     //Flohmarkt B
     const salesRawB = salesData.dataset.salesB; 
     const salesB = salesRawB.split(',').map(item => Number(item));
+
+    //speichere die breite der char-card in einer Variable
+    const card = document.getElementById('charts-container-id');
+    const cardWidth = card.offsetWidth;
+    console.log("cardWidth: ", cardWidth)
     
     //Teste die gespeicherten Daten
+    console.log("char supplier: ",document.getElementById("chart-supplier"));
     console.log("Anzahl der Käufer in A: " ,buyersNumberA)
     console.log("round_number + 1: ", roundNumber.dataset.roundNumber + 1)
     console.log("Seite wurde geladen")
@@ -80,18 +86,18 @@ function initChartsOnce() {
             labels: roundsLabel,
             datasets: [
                 {
-                    label: 'Anzahl der Verkäufer in Flohmarkt A',
+                    label: gettext('Anzahl der Verkäufer in Flohmarkt A'),
                     data: suppliersNumberA, 
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 },
                 {
-                    label: 'Anzahl der Verkäufer in Flohmarkt B',
+                    label: gettext('Anzahl der Verkäufer in Flohmarkt B'),
                     data: suppliersNumberB,
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 }
             ]
         },
@@ -106,7 +112,7 @@ function initChartsOnce() {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
                         font: {
-                            size: 16,          // Schriftgröße
+                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }
@@ -118,7 +124,7 @@ function initChartsOnce() {
                     callbacks: {
                         title: function (contexts) {
                             const roundIndex = contexts[0].dataIndex;
-                            return `Runde ${roundIndex + 1}`;
+                            return `${gettext("Runde")} ${roundIndex + 1}`;
                         },
                         // Inhalt pro Balken (A oder B)
                         label: function (context) {
@@ -135,7 +141,7 @@ function initChartsOnce() {
 
                             // Rückgabe als zusammengesetzter String
                             return [`${datasetLabel}: ${anzahl}`,
-                                `Standmiete : ${preis} €`
+                                `${gettext("Standmiete")} : ${preis} €`
                             ]
                         }
                     }
@@ -143,7 +149,7 @@ function initChartsOnce() {
                 legend: {
                     labels: {
                         font: {
-                   //         size: Math.max(0, Math.round(window.innerWidth * 0.017))
+                    //        size: Math.min(16, Math.round(window.innerWidth * 0.02))
                         }
                     }
 
@@ -158,18 +164,18 @@ function initChartsOnce() {
             labels: roundsLabel,
             datasets: [
                 {
-                    label: 'Anzahl der Käufer in Flohmarkt A',
+                    label: gettext('Anzahl der Käufer in Flohmarkt A'),
                     data: buyersNumberA,
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 },
                 {
-                    label: 'Anzahl der Käufer in Flohmarkt B',
+                    label: gettext('Anzahl der Käufer in Flohmarkt B'),
                     data: buyersNumberB,
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 }
             ]
         },
@@ -183,7 +189,7 @@ function initChartsOnce() {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
                         font: {
-                            size: 16,          // Schriftgröße
+                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }
@@ -195,7 +201,7 @@ function initChartsOnce() {
                     callbacks: {
                         title: function (contexts) {
                             const roundIndex = contexts[0].dataIndex;
-                            return `Runde ${roundIndex + 1}`;
+                            return `${gettext("Runde")} ${roundIndex + 1}`;
                         },
                         label: function (context) {
                             const index = context.dataIndex;
@@ -209,7 +215,7 @@ function initChartsOnce() {
 
                             return [
                                 `${datasetLabel}: ${anzahl}`,
-                                `Eintrittsgebühr : ${preis} €`
+                                `${gettext("Eintrittsgebühr")} : ${preis} €`
                             ];
                         }
                     }
@@ -225,18 +231,18 @@ function initChartsOnce() {
             labels: roundsLabel,
             datasets: [
                 {
-                    label: 'Umsatz von Flohmarkt A',
+                    label: gettext('Umsatz von Flohmarkt A'),
                     data: salesA,
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 },
                 {
-                    label: 'Umsatz von Flohmarkt B',
+                    label: gettext('Umsatz von Flohmarkt B'),
                     data: salesB,
                     borderWidth: 2,
                     barPercentage: 0.4,
-                    categoryPercentage: 0.6
+                    categoryPercentage: 0.7
                 }
             ]
         },
@@ -251,7 +257,7 @@ function initChartsOnce() {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
                         font: {
-                            size: 16,          // Schriftgröße
+                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }
@@ -263,7 +269,7 @@ function initChartsOnce() {
                     callbacks: {
                         title: function (contexts) {
                             const roundIndex = contexts[0].dataIndex;
-                            return `Runde ${roundIndex + 1}`;
+                            return `${gettext("Runde")} ${roundIndex + 1}`;
                         },
                         // Inhalt pro Balken (A oder B)
                         label: function (context) {
@@ -302,10 +308,11 @@ btn2.addEventListener("click", ()=>{
 //    chartsContainer.classList.toggle('hidden');
     chartsContainer.classList.toggle('visible');
     if (chartsContainer.classList.contains('visible')) {
-        btn2.innerHTML = '<i class="bi bi-bar-chart-line-fill"></i> Diagramme ausblenden'
+        btn2.innerHTML = 
+        gettext('<i class="bi bi-bar-chart-line-fill"></i> Diagramme ausblenden');
     }
     else {
-        btn2.innerHTML = '<i class="bi bi-bar-chart-line-fill"></i> Diagramme anzeigen'
+        btn2.innerHTML = gettext('<i class="bi bi-bar-chart-line-fill"></i> Diagramme anzeigen');
     }
 });
 

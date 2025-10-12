@@ -19,11 +19,11 @@ const { chars } = text.split('.round_header', {
 });
 
 animate(chars, {
-  y: ['75%', '0%'],
+  y: ['80%', '0'],
   duration: 750,
   ease: 'out(3)',
   delay: stagger(50),
   loop: false,
   alternate: true,
-  delay: 750
+  delay: 200
 });

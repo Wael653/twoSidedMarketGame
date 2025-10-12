@@ -1,35 +1,36 @@
 {% load static %}
-<div class = "custom-modal21 overlay-winner">
+{% load i18n %}
+<div class = "custom-modal22 overlay-winner">
     <div class = "container2">
         <header class="header-winner">
           <!-- <i class="bi bi-trophy"></i> -->
             <div class="trophy" aria-hidden="true">🏆</div>
-            <h1>Glückwunsch!</h1>
-            <div>Der Gewinner dieses Spiels ist </div>
+            <h1>{% translate "Glückwunsch!" %}</h1>
+            <div>{% translate "Der Gewinner dieses Spiels ist" %}</div>
         </header>
         <section>
             
             <div class="winner-name">
                 <i class="bi bi-star-fill"></i>
-                <span>{{ winner }}</span>
+                <span>{% translate "Flohmarkt " %}{{ winner }}</span>
             </div>
             <div class = "total-sales">
                 <div class = "sale"> 
-                    <div>Flohmarkt A </div>
+                    <div>{% translate "Flohmarkt A" %}</div>
                     <div>{{sum_A}} €</div>
-                    <div>Gesamtumsatz</div>
+                    <div>{% translate "Gesamtumsatz" %}</div>
                 </div>
                 <div class = "sale"> 
-                    <div>Flohmarkt B</div>
+                    <div>{% translate "Flohmarkt B" %}</div>
                     <div>{{sum_B}} €</div>
-                    <div>Gesamtumsatz</div>
+                    <div>{% translate "Gesamtumsatz" %}</div>
                 </div>
              </div>
         </section>
         <footer>
             <a href="{% url 'welcome' %}">
                 <button class="back">
-                    Spiel wiederholen
+                    {% translate "Spiel wiederholen" %}
                 </button>
             </a>
         </footer>

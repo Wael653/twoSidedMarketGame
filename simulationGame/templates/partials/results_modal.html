@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Ergebnisse Runde</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% load i18n %}
+<script src="{% url 'javascript-catalog' %}"></script>
   <style>
-    
-
 /*
     .charts-container.hidden {
       display:none 
@@ -36,25 +30,25 @@
 </head>
 <body>
   <div class="container">
-    <div id = "round_header" class="header" data-round-number ="{{round_number}}">Ergebnisse Runde {{round_number}}</div>
+    <div id = "round_header" class="header" data-round-number={{ round_number}}>{% blocktranslate %}Ergebnisse Runde {{round_number}}{% endblocktranslate %}</div>
     <div class="results-container"> 
       <div class="results">  
         <div>
-          <div><strong>Flohmarkt A</strong></div>
-          <div>Verkäufer: <span class="count" data-target="{{suppliers_number_A}}">{{suppliers_number_A}}</span></div>
-          <div>Käufer:    <span class="count" data-target="{{buyers_number_A}}">{{buyers_number_A}}</span></div>
-          <div>Umsatz:    <span class="count" data-target="{{UmsatzA}}" data-suffix=" €">{{UmsatzA}}</span></div>
-          <div>Standmiete: <span class="count" data-target="{{stand_rental_A}}" data-suffix=" €" data-round="0">{{stand_rental_A}}</span></div>
-          <div>Eintrittsgebühr:    <span class="count" data-target="{{entrance_fee_A}}" data-suffix=" €" data-round="0">{{entrance_fee_A}}</span></div>
+          <div><strong>{% translate "Flohmarkt A" %}</strong></div>
+          <div>{% translate "Verkäufer:" %} <span class="count" data-target="{{suppliers_number_A}}">{{suppliers_number_A}}</span></div>
+          <div>{% translate "Käufer:" %} <span class="count" data-target="{{buyers_number_A}}">{{buyers_number_A}}</span></div>
+          <div>{% translate "Umsatz:" %} <span class="count" data-target="{{UmsatzA}}" data-suffix=" €">{{UmsatzA}}</span></div>
+          <div>{% translate "Standmiete:" %} <span class="count" data-target="{{stand_rental_A}}" data-suffix=" €" data-round="0">{{stand_rental_A}}</span></div>
+          <div>{% translate "Eintrittsgebühr:" %} <span class="count" data-target="{{entrance_fee_A}}" data-suffix=" €" data-round="0">{{entrance_fee_A}}</span></div>
           
         </div>
         <div>
-          <div><strong>Flohmarkt B</strong></div>
-          <div>Verkäufer: <span class="count" data-target="{{suppliers_number_B}}">{{suppliers_number_B}}</span></div>
-          <div>Käufer:    <span class="count" data-target="{{buyers_number_B}}">{{buyers_number_B}}</span></div>
-          <div>Umsatz:    <span class="count" data-target="{{UmsatzB}}" data-suffix=" €">{{UmsatzB}}</span></div>
-          <div>Standmiete: <span class="count" data-target="{{stand_rental_B}}" data-suffix=" €" data-round="0">{{stand_rental_B}}</span></div>
-          <div>Eintrittsgebühr:    <span class="count" data-target="{{entrance_fee_B}}" data-suffix=" €" data-round="0">{{entrance_fee_B}}</span></div>
+          <div><strong>{% translate "Flohmarkt B" %}</strong></div>
+          <div>{% translate "Verkäufer:" %} <span class="count" data-target="{{suppliers_number_B}}">{{suppliers_number_B}}</span></div>
+          <div>{% translate "Käufer:" %} <span class="count" data-target="{{buyers_number_B}}">{{buyers_number_B}}</span></div>
+          <div>{% translate "Umsatz:" %} <span class="count" data-target="{{UmsatzB}}" data-suffix=" €">{{UmsatzB}}</span></div>
+          <div>{% translate "Standmiete:" %} <span class="count" data-target="{{stand_rental_B}}" data-suffix=" €" data-round="0">{{stand_rental_B}}</span></div>
+          <div>{% translate "Eintrittsgebühr:" %} <span class="count" data-target="{{entrance_fee_B}}" data-suffix=" €" data-round="0">{{entrance_fee_B}}</span></div>
           
         </div>
       </div>
@@ -65,23 +59,23 @@
               {% endif%} ">
         <button class="next-btn">
          {% if last_round  %}
-            Gewinner anzeigen
+            {% translate "Gewinner anzeigen" %}
          {% else %}
-            weiter zur Runde {{ nxt_round }}
+            {% blocktranslate %}weiter zur Runde {{ nxt_round }}{% endblocktranslate %}
          {% endif %}
         </button>
       </a>
       <button id="toggle-charts" class="chart-btn">
-              <i class="bi bi-bar-chart-line-fill"></i> Diagramme anzeigen
+              <i class="bi bi-bar-chart-line-fill"></i>{% translate "Diagramme anzeigen" %}
       </button> 
     </div>
   </div>
     <div id = "charts-container-id" class="charts-container">
-      <h2>Anzahl der Veräufer</h2>
+      <h2>{% translate "Anzahl der Veräufer" %}</h2>
       <canvas id="chart-supplier"></canvas>
-      <h2>Anzahl der Käufer</h2>
+      <h2>{% translate "Anzahl der Käufer" %}</h2>
       <canvas id="chart-buyer"></canvas>
-      <h2>Umsätze</h2> 
+      <h2>{% translate "Umsätze" %}</h2> 
       <canvas id="chart-sales"></canvas> 
     </div>
   <div id="suppliers_data" 
@@ -102,4 +96,3 @@
   </div>
 </body>
 </html>
-<!--{{ suppliers_number_list_A|join:',' }}-->

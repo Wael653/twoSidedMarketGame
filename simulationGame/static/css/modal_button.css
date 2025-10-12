@@ -1,0 +1,102 @@
+.modale-button {
+  background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
+  border-radius: 15px;
+  font-family:Arial;
+  padding: clamp(0.5rem, 0.431rem + 0.46vw, 0.625rem) clamp(0.625rem, 0.556rem + 0.46vw, 0.75rem);
+  border: 2px solid #d4a76c;
+  transition: transform 0.2s;
+  font-size: clamp(0.75rem, 0.474rem + 1.839vw, 1.25rem);
+}
+
+.button-overlay {
+    width: 97dvw;
+    text-align: end;
+}
+
+.modale::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modale {
+     /* box-sizing: border-box; */
+     /* position: relative; */
+     width: min(570px,60vw);
+     margin: auto;
+     font-family: Arial;
+     color: #8e6d4f;
+     background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
+     padding: clamp(0.813rem, 0.525rem + 1.915vw, 1.663rem) clamp(0.75rem, 0.496rem + 1.69vw, 1.5rem);
+     border-radius: 22px;
+     /*  max-width: 50ch; */
+     border: 2px solid #b6a18b;
+     box-shadow: 0 0 1em rgb(0 0 0 / .3);
+     z-index: 2000;
+     /* display: flex; */
+     container-type: inline-size;
+     flex-direction: column;
+     gap: 2rem;
+}
+
+.modale-button:hover {
+  transform: scale(1.05);
+}
+
+.simulation-start-btn:active {
+  background: #dda15e;     
+  transform: scale(0.92);   
+}
+     @media (max-width: 480px) {
+        .footer-button {
+            border: 1px solid #d4a76c;
+        }
+     }
+
+     @media (max-width: 320px){
+        .modale-button {
+            border: 1px solid #d4a76c;
+        }
+    }
+
+
+.modale-footer {
+    display: flex;
+    justify-content: end;
+    gap: 4cqw;
+    margin-top: clamp(1.563rem, 1.127rem + 2.901vw, 2.85rem);
+    /* position: absolute; */
+}
+.footer-button:hover, .footer-button:active  {
+        background: #d4a373;
+}
+    
+.footer-button {
+    cursor: pointer;
+    padding: 2.6cqw 3cqw;
+    color: #8e6d4f;
+    border-radius: 1em;
+    border: 2px solid #d4a76c;
+    font-size: clamp(0.688rem, 0.54rem + 0.986vw, 1.125rem);
+    /* font-size: 20px; */
+}
+
+.modale[open] {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animation beim Schließen */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 420px) {
+    .modale {
+        width: 70vw;
+    }
+}

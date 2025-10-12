@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-09 19:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\simulationGame\static\js\results_script.js:12
+#: .\simulationGame\static\js\results_script.js:127
+#: .\simulationGame\static\js\results_script.js:204
+#: .\simulationGame\static\js\results_script.js:272
+msgid "Runde"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:89
+msgid "Anzahl der Verkäufer in Flohmarkt A"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:96
+msgid "Anzahl der Verkäufer in Flohmarkt B"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:144
+msgid "Standmiete"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:167
+msgid "Anzahl der Käufer in Flohmarkt A"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:174
+msgid "Anzahl der Käufer in Flohmarkt B"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:218
+msgid "Eintrittsgebühr"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:234
+msgid "Umsatz von Flohmarkt A"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:241
+msgid "Umsatz von Flohmarkt B"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:312
+msgid "<i class=\"bi bi-bar-chart-line-fill\"></i> Diagramme ausblenden"
+msgstr ""
+
+#: .\simulationGame\static\js\results_script.js:315
+msgid "<i class=\"bi bi-bar-chart-line-fill\"></i> Diagramme anzeigen"
+msgstr ""

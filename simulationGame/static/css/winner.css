@@ -11,15 +11,13 @@
 .header-winner {
     text-align: center;
 }
-.trophy {/*    background-color: yellow; */font-size: 6rem;color: #7e5d4a;}
+.trophy {
+font-size: 6rem;color: #7e5d4a;}
 .bi-trophy {
-/*    background-color: yellow; */
     font-size: 5rem;
     color: #7e5d4a;
 }
 .container2{
-    /* margin-top: 7cqw; */
-    /*  transform: scale(1.5); */
     padding: 7.5cqw 7cqw;
     display: flex;
     flex-direction: column;
@@ -41,9 +39,9 @@
 .winner-name {
     border: 1px solid;
     text-align: center;
-    width: 70cqw;
+    /* width: 70cqw; */
     margin: auto;
-    padding: 10px 10px;
+    padding: 3cqw 3.5cqw;
     border-radius: 30px;
     margin-bottom: 18px;
     background-color: #6a994e;
@@ -68,7 +66,7 @@
 .sale {
     padding: 10px 10px;
     border: 1px solid black;
-    border-radius: 12px;
+    border-radius: 15px;
     background: white;
     width: 32cqw;
 }
@@ -100,7 +98,7 @@ button.back {
     padding: 3.8cqw 6cqw;
     border-radius: 24px;
     background-color: #6e7f4d;
-    font-size: 8cqw;
+    font-size: 6cqw;
     color: white;
     border: none;
     transition: background 0.2s, transform 0.15s;
@@ -111,4 +109,8 @@ button.back {
 button.back:hover {
     background:#8ba766;
     transform: scale(1.05);
+}
+.button-back:active {
+  background: #dda15e;     
+  transform: scale(0.92);   
 }

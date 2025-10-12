@@ -1,27 +1,41 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
   <div class="round-wrap">
-    <div class="round_header">Runde {{ runde }}</div>
-    <div class="round-modal">
-      <h2 class="flohmarkt-title">Flohmarkt {{ market }}</h2>
+      <div class="round_header {% if market == 'A' %}header-a{% else %}header-b{% endif %}">{% translate "Runde" %} {{ round }}</div>
+    <div class="round-modal {% if market == 'A' %}market-a{% else %}market-b{% endif %}">
+        <h2 class="flohmarkt-title">{% translate "Flohmarkt" %} {{ market }}</h2>
       <form class="form-content" method = "post">
         {% csrf_token %}
         <div class="input-row">
-          <label for="standmiete" class="runde-label">Standmiete für Verkäufer</label>
-          <input type="number" class="runde-input" name="standmiete" id= "standmiete" placeholder="max. 190 Euro" max="190" />
+          <label for="standmiete" class="round-label">{% translate "Standmiete für Verkäufer" %}</label>
+          <input type="number" class="round-input" name="standmiete" id= "standmiete" 
+          {% if LANGUAGE_CODE == 'de' %}
+             placeholder="max. 200 Euro"
+          {% elif LANGUAGE_CODE == 'en' %}
+             placeholder="max. 200 euros"
+          {% endif %} 
+           max="200" />
         </div>
         <div class="input-row">
-          <label for="eintritt" class="runde-label">Eintrittsgebühr für Käufer</label>
-          <input type="number" class="runde-input" name = "eintritt" id = "eintritt" placeholder="max. 40 Euro" max="40" />
+          <label for="eintritt" class="round-label">{% translate "Eintrittsgebühr für Käufer" %}</label>
+          <input type="number" class="round-input" name = "eintritt" id = "eintritt"
+          {% if LANGUAGE_CODE == 'de' %}
+             placeholder="max. 50 Euro"
+          {% elif LANGUAGE_CODE == 'en' %}
+             placeholder="max. 50 euros"
+          {% endif %} 
+          max="50" />
         </div>
-        <button type="submit" class="runde-btn" name= "submitButton">
+        <button type="submit" class="round-btn {% if market == 'A' %}btn-a{% else %}btn-b{% endif %}" name= "submitButton">
           {% if market == "A" %}
-            weiter zu Flohmarkt B 
+           {% translate "weiter zu Flohmarkt B" %}
           {% else %}
-            weiter zur Berechnung
+           {% translate "weiter zur Berechnung" %}
           {% endif %}
         </button>
       </form>

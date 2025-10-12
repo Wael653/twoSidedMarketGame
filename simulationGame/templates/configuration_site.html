@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Spiel konfigurieren{% endblock %}
+{% load i18n %}
+{% block title %}{% translate "Spiel konfigurieren" %}{% endblock %}
 {% block content %}
+<div class="page-wrap">
+{% include "partials/modal_button.html" %}
 {% include "partials/configuration_modal.html" %}
+<div>
 <script src="https://cdn.jsdelivr.net/npm/animejs@4.1.3/lib/anime.iife.min.js"></script>
 <script src="{% static 'js/configuration_script.js' %}"></script>
 {% endblock %}

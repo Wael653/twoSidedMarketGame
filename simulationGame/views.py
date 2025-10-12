@@ -1,25 +1,29 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils import translation
+from django.utils.translation import gettext as _
 from .models import Supplier, Buyer
 import random
 import numpy as np
 
 
+def my_view(request):
+    output = _("Welcome to my site.")
+    return HttpResponse(output)
+
 # Create your views here.
 def welcome(request):
+       request.session.flush()  
        return render(request, 'welcome.html', {})
 def configuration(request):
-        """
-        if request.session.get("round_number"):
-            del request.session["round_number"] 
-        """
-        request.session.clear()
         error = ""
-        request.session["configured"] = False
-        request.session[f'buyers_numberA_in_round_0'] = 500
-        request.session[f'buyers_numberB_in_round_0'] = 500
-        request.session[f'suppliers_numberA_in_round_0'] = 50
-        request.session[f'suppliers_numberB_in_round_0'] = 50
+        if request.method == "GET":
+          request.session.flush()
+          request.session["configured"] = False
+          request.session[f'buyers_numberA_in_round_0'] = 500
+          request.session[f'buyers_numberB_in_round_0'] = 500
+          request.session[f'suppliers_numberA_in_round_0'] = 50
+          request.session[f'suppliers_numberB_in_round_0'] = 50
         if request.method == "POST": 
             game_rounds_number = request.POST.get("game_rounds_number")
             cross_side = request.POST.get("cross_side")
@@ -38,8 +42,8 @@ def configuration(request):
                    request.session["beta"] = 30
                    request.session["alpha"] = 30
               request.session["configured"] = True
-              print("alpha: ", request.session.get("alpha"))
-              print("beta: ", request.session.get("beta"))
+          #    print("alpha: ", request.session.get("alpha"))
+          #    print("beta: ", request.session.get("beta"))
               # Redirect zu round page
               return redirect('round_view', round_number=1, market='A')
             else:
@@ -49,15 +53,9 @@ def configuration(request):
 
 
 def round_view(request, round_number, market):
-      #In der Session den Anteil in der letzten Runde speichern
-    request.session['prev_buyers_A'] = request.session.get(f'buyers_numberA_in_round_{round_number - 1}')
-    request.session['prev_buyers_B'] = request.session.get(f'buyers_numberB_in_round_{round_number - 1}')
-    request.session['prev_suppliers_A'] = request.session.get(f'suppliers_numberA_in_round_{round_number - 1}')
-    request.session['prev_suppliers_B'] = request.session.get(f'suppliers_numberB_in_round_{round_number - 1}')
     
     if request.session.get("configured") == False or round_number > int(request.session.get("game_rounds_number")):
          return redirect("configuration")
-    request.session['round_number'] = round_number
     if request.method == "POST":
         # Werte aus dem Formular holen
         if market == 'A':
@@ -73,13 +71,9 @@ def round_view(request, round_number, market):
             
             # Beispiel: Markt wechseln
             market = 'B' 
-        #  request.session['runde'] = runde */
-          #  request.session['markt'] = markt 
-            print("Market: " + market)
-        # Seite neu rendern 
             return redirect('round_view', round_number, market)
         if market == 'B':
-            print("POST-Bedingung erfüllt!")
+          #  print("POST-Bedingung erfüllt!")
             eintritt_B = request.POST.get('eintritt')
             stand_rental_B = request.POST.get('standmiete')
  
@@ -101,28 +95,28 @@ def round_view(request, round_number, market):
             UmsatzB = suppliers_number_B*stand_rental_B + buyers_number_B*eintritt_B 
             request.session[f'UmsatzA_in_round_{round_number}'] = UmsatzA
             request.session[f'UmsatzB_in_round_{round_number}'] = UmsatzB
-            print("buyers_number_A: ", buyers_number_A)
-            print("buyers_number_B: ", buyers_number_B) 
+          #  print("buyers_number_A: ", buyers_number_A)
+          #  print("buyers_number_B: ", buyers_number_B) 
            # speichere die Anzahl der Käufer und Verkäufer
             request.session[f'suppliers_numberA_in_round_{round_number}'] = suppliers_number_A
             request.session[f'suppliers_numberB_in_round_{round_number}'] = suppliers_number_B
             request.session[f'buyers_numberA_in_round_{round_number}'] = buyers_number_A
             request.session[f'buyers_numberB_in_round_{round_number}'] = buyers_number_B
-       #     request.session['prev_buyers_A'] = buyers_number_A
-       #     request.session['prev_buyers_B'] = buyers_number_B
-       #     request.session['prev_suppliers_A'] = suppliers_number_A
-       #     request.session['prev_suppliers_B'] = suppliers_number_B
             return redirect('results', round_number)
             # return redirect('results', suppliers_number_A, suppliers_number_B, buyers_number_A, buyers_number_B)
     
     return render(request, 'round_site.html', {
-        'runde': round_number,
+        'round': round_number,
         'market': market,
     })
-# def results_view(request, suppliers_number_A, suppliers_number_B, buyers_number_A, buyers_number_B):
+
 def results_view(request, round_number):
+     #In der Session den Anteil in der letzten Runde speichern
+     request.session['prev_buyers_A'] = request.session.get(f'buyers_numberA_in_round_{round_number - 1}')
+     request.session['prev_buyers_B'] = request.session.get(f'buyers_numberB_in_round_{round_number - 1}')
+     request.session['prev_suppliers_A'] = request.session.get(f'suppliers_numberA_in_round_{round_number - 1}')
+     request.session['prev_suppliers_B'] = request.session.get(f'suppliers_numberB_in_round_{round_number - 1}')
      last_round = False
-     round_number = request.session.get("round_number")
      if round_number is None:
         return HttpResponse("Fehler: Rundenanzahl nicht in der Session vorhanden.", status=400)
      stand_rental_A = request.session["stand_rental_A"]
@@ -136,7 +130,7 @@ def results_view(request, round_number):
      UmsatzA = request.session.get(f'UmsatzA_in_round_{round_number}')
      UmsatzB = request.session.get(f'UmsatzB_in_round_{round_number}')
      if round_number == int(request.session['game_rounds_number']):
-          print(f"Rundenanzahl: {round_number} sind fertig abgelaufen")
+     #     print(f"Rundenanzahl: {round_number} sind fertig abgelaufen")
           last_round = True
      nxt_round = round_number + 1
      # Speichere die Verkäuferanzahl sowie die gesetzte Preise von Flohmärkten A und B in Listen 
@@ -218,9 +212,9 @@ def results_view(request, round_number):
         'Umsatz_list_B': Umsatz_list_B
     }
      request.session["Umsatz_list_A"] = Umsatz_list_A
-     print(f'Umsatz_list_A: {request.session.get("Umsatz_list_A")}')
-     for element in request.session.get("Umsatz_list_A"):
-          print(element, "->", type(element))
+   #  print(f'Umsatz_list_A: {request.session.get("Umsatz_list_A")}')
+    # for element in request.session.get("Umsatz_list_A"):
+       #   print(element, "->", type(element))
      request.session["Umsatz_list_B"] = Umsatz_list_B
      return render(request, 'results_site.html', context)
 
@@ -235,8 +229,8 @@ def calculate_suppliers_number(request):
     list_suppliersB = []
     j = 0
     for supplier in suppliers_list:     
-         supplier.travel_cost_to_A = random.randint(5,115)
-         supplier.travel_cost_to_B = random.randint(5,115)
+         supplier.travel_cost_to_A = random.randint(5,100)
+         supplier.travel_cost_to_B = random.randint(5,100)
 
          if j == 20:
             #   print("supplier: ", {j})
@@ -279,10 +273,10 @@ def calculate_supplier_score(request, supplier, market):
         prev_buyers = int(request.session["prev_buyers_B"])
         travel_cost = supplier.travel_cost_to_B
         stand_rental = int(request.session["stand_rental_B"])
-    print("willingness_to_pay: ", supplier.willingness_to_pay )
-    print("gamma*stand_rental: ", gamma*stand_rental)
-    print("stand_rental: ", stand_rental)
-    print("prev_buyers: ", prev_buyers)
+  #  print("willingness_to_pay: ", supplier.willingness_to_pay )
+  #  print("gamma*stand_rental: ", gamma*stand_rental)
+  #  print("stand_rental: ", stand_rental)
+  #  print("prev_buyers: ", prev_buyers)
     score = supplier.willingness_to_pay + beta*(prev_buyers/1000) -  gamma*stand_rental - 0.2*travel_cost
     return score
 
@@ -316,24 +310,21 @@ def calculate_buyers_number(request):
       #    print(f"list_buyrsA: {len(list_buyersA)}")
       #    print(f"list_buyrsB: {len(list_buyersB)}")
      return len(list_buyersA), len(list_buyersB)
-          
-          
-          
 
 def winner_view(request):
      Umsatz_list_A = request.session.get("Umsatz_list_A")
-     print("Umsatz_list_A: ", Umsatz_list_A)
+   #  print("Umsatz_list_A: ", Umsatz_list_A)
      sum_A = sum(Umsatz_list_A)
      Umsatz_list_B = request.session.get("Umsatz_list_B")
      sum_B = sum(Umsatz_list_B)
-     winner = "Flohmarkt A" if sum_A > sum_B else 'Flohmarkt B'
+     winner = 'A' if sum_A > sum_B else 'B'
      if sum_A == sum_B:
           return render(request, 'draw_site.html', {'sum_A':sum_A})
      return render(request, 'winner_site.html', {'sum_A':sum_A, 'sum_B':sum_B, 'winner': winner})
       
      
 def calculate_buyer_score(request, buyer, market):
-     omega = 0.875
+     omega = 0.8
      alpha = float(request.session["alpha"])
      """
          if buyer.out_door_pf == 0:

@@ -1,0 +1,515 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-12 15:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\simulationGame\templates\configuration_site.html:4
+#: .\simulationGame\templates\partials\configuration_modal.html:10
+msgid "Spiel konfigurieren"
+msgstr "Game configuration"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:13
+msgid "Gebe die Einstellungen für deine Simulation ein:"
+msgstr "Enter your simulation settings:"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:20
+msgid "Rundenanzahl:"
+msgstr "Number of rounds:"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:23
+#: .\simulationGame\templates\partials\configuration_modal.html:39
+msgid "wählen"
+msgstr "select"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:36
+msgid "Wechelseitige Effekts:"
+msgstr "Cross-Side effects:"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:50
+msgid ""
+" <strong> Wechselseitiger Effekt:</strong><br>\n"
+"                Die Erklärung dazu findest du auf der Anleitungsseite\n"
+"                <br>\n"
+"                <br>\n"
+"              "
+msgstr ""
+"<strong>Cross-Side Effect:</strong><br>\n"
+"                You can find the explanation on the instruction page\n"
+"                <br>\n"
+"                <br>\n"
+"              "
+
+#: .\simulationGame\templates\partials\configuration_modal.html:55
+msgid ""
+"\n"
+"              <ul>\n"
+"                <li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer "
+"weniger.</li>\n"
+"                <li><b>Option 1:</b> Käufer hat starken Einfluss, Verkäufer "
+"weniger.</li>\n"
+"                <li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich "
+"stark.</li>\n"
+"              </ul>\n"
+"              "
+msgstr ""
+"\n"
+"              <ul>\n"
+"                <li><b>Option 1:</b> Seller has strong effect, buyer less.</"
+"li>\n"
+"                <li><b>Option 2:</b> Buyer has strong effect, seller less.</"
+"li>\n"
+"                <li><b>Option 3:</b> Both sides affect each other equally "
+"strongly.</li>\n"
+"              </ul>\n"
+"              "
+
+#: .\simulationGame\templates\partials\configuration_modal.html:66
+msgid "Simulation starten"
+msgstr "Start simulation"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:70
+#, fuzzy, python-format
+#| msgid "%(error)s"
+msgid "%(error)s"
+msgstr "Please select both options."
+
+#: .\simulationGame\templates\partials\explanation_modal.html:78
+msgid "Anleitung"
+msgstr "instruction"
+
+#: .\simulationGame\templates\partials\explanation_modal.html:79
+msgid "Spiel mit einem Freund zusammen!"
+msgstr "Play with a friend"
+
+#: .\simulationGame\templates\partials\explanation_modal.html:87
+msgid "SPIELER A"
+msgstr "Player A"
+
+#: .\simulationGame\templates\partials\explanation_modal.html:99
+msgid "SPIELER B"
+msgstr "Player B"
+
+#: .\simulationGame\templates\partials\explanation_modal.html:103
+msgid ""
+"\n"
+"      <strong>Spielübersicht:</strong>\n"
+"        <ul>\n"
+"          <li>Das Spiel wird von <strong>zwei Spielern</strong> gespielt:\n"
+"            <ul>\n"
+"              <li><strong>Spieler A</strong> betreibt Flohmarkt A</li>\n"
+"              <li><strong>Spieler B</strong> betreibt Flohmarkt B</li>\n"
+"            </ul>\n"
+"          </li>\n"
+"          <li>Es gibt insgesamt <strong>100 Verkäufer</strong> und "
+"<strong>1000 Käufer</strong>,\n"
+"              die sich auf beide Märkte verteilen (nicht unbedingt "
+"vollständig verteilt).</li>\n"
+"        </ul>\n"
+"      "
+msgstr ""
+"\n"
+"      <strong>Game Overview:</strong>\n"
+"        <ul>\n"
+"          <li>The game is played by <strong>two players</strong>:\n"
+"            <ul>\n"
+"              <li><strong>Player A</strong> runs Flea Market A</li>\n"
+"              <li><strong>Player B</strong> runs Flea Market B</li>\n"
+"            </ul>\n"
+"          </li>\n"
+"          <li>There are a total of <strong>100 sellers</strong> and "
+"<strong>1000 buyers</strong>,\n"
+"              who are distributed across both markets (not necessarily fully "
+"allocated).</li>\n"
+"        </ul>\n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:116
+msgid ""
+"\n"
+"      <strong>Ziel:</strong>\n"
+"        <ul> \n"
+"          <li>Beide Spieler versuchen, über die gesamte Spielzeit ihren "
+"<strong>Gesamtumsatz zu maximieren</strong>.</li>\n"
+"        </ul> \n"
+"      "
+msgstr ""
+"\n"
+"      <strong>Goal:</strong>\n"
+"        <ul> \n"
+"          <li>Both players try to <strong>maximize their total revenue</"
+"strong> throughout the entire game.</li>\n"
+"        </ul> \n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:122
+msgid ""
+"\n"
+"      <strong>Spielablauf:</strong>\n"
+"        <ul>\n"
+"          <li>Das Spiel läuft <strong>rundenbasiert</strong> ab.\n"
+"          <li>Die <strong>Anzahl der Runden</strong> wird auf der "
+"<strong>Konfigurationsseite</strong> festgelegt.</li>\n"
+"          <li>Dort wählt man auch eine <strong>Kombination der "
+"Netzwerkeffekte</strong> aus.</li>\n"
+"        </ul>\n"
+"      "
+msgstr ""
+"\n"
+"      <strong>Game Flow:</strong>\n"
+"        <ul>\n"
+"          <li>The game is played in a <strong>turn-based</strong> manner.</"
+"li>\n"
+"          <li>The <strong>number of rounds</strong> is defined on the "
+"<strong>configuration page</strong>.</li>\n"
+"          <li>There, you can also choose a <strong>combination of network "
+"effects</strong>.</li>\n"
+"        </ul>\n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:130
+msgid ""
+"\n"
+"      <strong>Wechselseitiger Effekt:</strong> \n"
+"      <ul>\n"
+"        <li>\n"
+"          Ein <strong>zentraler Aspekt</strong> in einem "
+"<strong>zweiseitigen Markt</strong> und beschreibt,\n"
+"          wie sich die beiden <strong>Marktseiten</strong> "
+"(<strong>Verkäufer</strong> und <strong>Käufer</strong>) \n"
+"          <strong>gegenseitig beeinflussen</strong>:\n"
+"          <ul>\n"
+"            <li>Wenn mehr <strong>Verkäufer</strong> auf dem Markt sind, "
+"wird dieser für \n"
+"                <strong>Käufer attraktiver</strong> (<em>größere Auswahl</"
+"em>).</li>\n"
+"            <li>Wenn mehr <strong>Käufer</strong> da sind, wird der Markt "
+"für \n"
+"                <strong>Verkäufer attraktiver</strong> (<em>mehr potenzielle "
+"Kunden und höhere Umsätze</em>).</li>\n"
+"          </ul>\n"
+"        </li>\n"
+"      </ul>\n"
+"      "
+msgstr ""
+"\n"
+"      <strong>Cross-Side Effect:</strong> \n"
+"      <ul>\n"
+"        <li>\n"
+"          A <strong>central aspect</strong> of a <strong>two-sided market</"
+"strong> that describes\n"
+"          how the two <strong>sides of the market</strong> (<strong>sellers</"
+"strong> and <strong>buyers</strong>) \n"
+"          <strong>influence each other</strong>:\n"
+"          <ul>\n"
+"            <li>When there are more <strong>sellers</strong> in the market, "
+"it becomes more \n"
+"                <strong>attractive to buyers</strong> (<em>greater variety</"
+"em>).</li>\n"
+"            <li>When there are more <strong>buyers</strong>, the market "
+"becomes more \n"
+"                <strong>attractive to sellers</strong> (<em>more potential "
+"customers and higher revenues</em>).</li>\n"
+"          </ul>\n"
+"        </li>\n"
+"      </ul>\n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:146
+msgid ""
+"\n"
+"      <strong>Ablauf einer Runde:</strong>\n"
+"        <ul> \n"
+"          <li>Beide Spieler legen nacheinander folgende Preise fest, \n"
+"            <strong>ohne die Preise des anderen Spielers zu kennen</"
+"strong>:\n"
+"            <ul>\n"
+"              <li><strong>Standmiete</strong> für Verkäufer</li>\n"
+"              <li><strong>Eintrittsgebühr</strong> für Käufer</li>\n"
+"            </ul>\n"
+"          </li> \n"
+"          <li>Anschließend werden folgendes berechnet:\n"
+"              <ul>\n"
+"                <li>Anzahl der Verkäufer auf jedem Markt</li>\n"
+"                <li>Anzahl der Käufer auf jedem Markt</li>\n"
+"                <li>Umsätze der beiden Spieler in dieser Runde</li>\n"
+"              </ul>\n"
+"            </li>\n"
+"            <li>Am Ende der Runde sehen beide Spieler:\n"
+"              <ul>\n"
+"                <li>ihre eigenen gesetzten Preise und Ergebnisse</li>\n"
+"                <li>die Preise und Ergebnisse des anderen Spielers</li>\n"
+"                <li>ein <strong>Balkendiagramm</strong>, das die "
+"Informationen der aktuellen Runde \n"
+"                  zusammen mit denen der vorherigen Runden anzeigt</li>\n"
+"              </ul>\n"
+"            </li>\n"
+"            <li>Mit diesen Informationen setzen die Spieler in der nächsten "
+"Runde neue Preise fest.</li>\n"
+"        </ul>\n"
+"      "
+msgstr ""
+"\n"
+"      <strong>Sequence of a Round:</strong>\n"
+"        <ul> \n"
+"          <li>Both players successively set the following prices \n"
+"            <strong>without knowing the other player’s prices</strong>:\n"
+"            <ul>\n"
+"              <li><strong>Stand rent</strong> for sellers</li>\n"
+"              <li><strong>Entry fee</strong> for buyers</li>\n"
+"            </ul>\n"
+"          </li> \n"
+"          <li>Then, the following values are calculated:\n"
+"              <ul>\n"
+"                <li>Number of sellers in each market</li>\n"
+"                <li>Number of buyers in each market</li>\n"
+"                <li>Revenues of both players in this round</li>\n"
+"              </ul>\n"
+"            </li>\n"
+"            <li>At the end of the round, both players see:\n"
+"              <ul>\n"
+"                <li>their own set prices and results</li>\n"
+"                <li>the prices and results of the other player</li>\n"
+"                <li>a <strong>bar chart</strong> showing the information of "
+"the current round \n"
+"                  together with that of previous rounds</li>\n"
+"              </ul>\n"
+"            </li>\n"
+"            <li>Using this information, players set new prices in the next "
+"round.</li>\n"
+"        </ul>\n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:174
+msgid ""
+"\n"
+"      <strong>Spielende:</strong>\n"
+"        <ul>\n"
+"          <li>Nach der letzten Runde werden die <strong>Gesamtumsätze</"
+"strong> beider Spieler angezeigt.</li>\n"
+"          <li>Der Spieler mit dem <strong>höheren Gesamtumsatz</strong> wird "
+"als <strong>Gewinner</strong> gekürt.</li>\n"
+"        </ul>\n"
+"      "
+msgstr ""
+"\n"
+"      <strong>End of the Game:</strong>\n"
+"        <ul>\n"
+"          <li>After the final round, the <strong>total revenues</strong> of "
+"both players are displayed.</li>\n"
+"          <li>The player with the <strong>higher total revenue</strong> is "
+"declared the <strong>winner</strong>.</li>\n"
+"        </ul>\n"
+"      "
+
+#: .\simulationGame\templates\partials\explanation_modal.html:183
+msgid "Verstanden!"
+msgstr "Got it!"
+
+#: .\simulationGame\templates\partials\modal_button.html:4
+msgid "Spiel neu starten"
+msgstr "Restart game"
+
+#: .\simulationGame\templates\partials\modal_button.html:8
+msgid "Möchtest du das Spiel wirklich neu starten?"
+msgstr "Do you really want to restart the game?"
+
+#: .\simulationGame\templates\partials\modal_button.html:11
+msgid "Ja, neu starten"
+msgstr "Yes, restart"
+
+#: .\simulationGame\templates\partials\modal_button.html:13
+msgid "Abbrechen"
+msgstr "Cancel"
+
+#: .\simulationGame\templates\partials\results_modal.html:33
+#: .\simulationGame\templates\results_site.html:4
+#, python-format
+msgid "Ergebnisse Runde %(round_number)s"
+msgstr "Results Round %(round_number)s"
+
+#: .\simulationGame\templates\partials\results_modal.html:37
+#: .\simulationGame\templates\partials\winner_modal.html:19
+msgid "Flohmarkt A"
+msgstr "Flea Market A"
+
+#: .\simulationGame\templates\partials\results_modal.html:38
+#: .\simulationGame\templates\partials\results_modal.html:47
+msgid "Verkäufer:"
+msgstr "Seller:"
+
+#: .\simulationGame\templates\partials\results_modal.html:39
+#: .\simulationGame\templates\partials\results_modal.html:48
+msgid "Käufer:"
+msgstr "Buyer:"
+
+#: .\simulationGame\templates\partials\results_modal.html:40
+#: .\simulationGame\templates\partials\results_modal.html:49
+msgid "Umsatz:"
+msgstr "Revenue:"
+
+#: .\simulationGame\templates\partials\results_modal.html:41
+#: .\simulationGame\templates\partials\results_modal.html:50
+msgid "Standmiete:"
+msgstr "Stand Rental:"
+
+#: .\simulationGame\templates\partials\results_modal.html:42
+#: .\simulationGame\templates\partials\results_modal.html:51
+msgid "Eintrittsgebühr:"
+msgstr "Entrance fee:"
+
+#: .\simulationGame\templates\partials\results_modal.html:46
+#: .\simulationGame\templates\partials\winner_modal.html:24
+msgid "Flohmarkt B"
+msgstr "Flea Market B"
+
+#: .\simulationGame\templates\partials\results_modal.html:62
+msgid "Gewinner anzeigen"
+msgstr "Show winner"
+
+#: .\simulationGame\templates\partials\results_modal.html:64
+#, python-format
+msgid "weiter zur Runde %(nxt_round)s"
+msgstr "Continue to round %(nxt_round)s"
+
+#: .\simulationGame\templates\partials\results_modal.html:69
+msgid "Diagramme anzeigen"
+msgstr "Show charts"
+
+#: .\simulationGame\templates\partials\results_modal.html:74
+msgid "Anzahl der Veräufer"
+msgstr "Number of sellers"
+
+#: .\simulationGame\templates\partials\results_modal.html:76
+msgid "Anzahl der Käufer"
+msgstr "Number of buyers"
+
+#: .\simulationGame\templates\partials\results_modal.html:78
+msgid "Umsätze"
+msgstr "Revenues"
+
+#: .\simulationGame\templates\partials\round_modal.html:9
+msgid "Runde"
+msgstr "Round"
+
+#: .\simulationGame\templates\partials\round_modal.html:14
+msgid "Flohmarkt"
+msgstr "Flea Market"
+
+#: .\simulationGame\templates\partials\round_modal.html:18
+msgid "Standmiete für Verkäufer"
+msgstr "Stand rental for sellers"
+
+#: .\simulationGame\templates\partials\round_modal.html:28
+msgid "Eintrittsgebühr für Käufer"
+msgstr "Entrance fee for buyers"
+
+#: .\simulationGame\templates\partials\round_modal.html:39
+msgid "weiter zu Flohmarkt B"
+msgstr "Continue to Flea Market B"
+
+#: .\simulationGame\templates\partials\round_modal.html:41
+msgid "weiter zur Berechnung"
+msgstr "Continue to calculation"
+
+#: .\simulationGame\templates\partials\welcome_modal.html:10
+msgid "Willkommen"
+msgstr "Welcome"
+
+#: .\simulationGame\templates\partials\welcome_modal.html:11
+msgid "zum Flohmarkt-Simulationsspiel!"
+msgstr "to the flea market simulation game!"
+
+#: .\simulationGame\templates\partials\welcome_modal.html:13
+msgid ""
+" Klicke <a href=\"instructions\" class=\"info-link\">hier</a>, um zu "
+"erfahren,<br>\n"
+"      wie das Spiel funktioniert. "
+msgstr ""
+"click <a href=\"instructions\" class=\"info-link\">here</a> to learn how the "
+"game works"
+
+#: .\simulationGame\templates\partials\welcome_modal.html:17
+msgid "Spiel starten"
+msgstr "Start game"
+
+#: .\simulationGame\templates\partials\winner_modal.html:8
+msgid "Glückwunsch!"
+msgstr "Congratulations!"
+
+#: .\simulationGame\templates\partials\winner_modal.html:9
+msgid "Der Gewinner dieses Spiels ist"
+msgstr "The winner of this game is"
+
+#: .\simulationGame\templates\partials\winner_modal.html:15
+msgid "Flohmarkt "
+msgstr "Flea Market "
+
+#: .\simulationGame\templates\partials\winner_modal.html:21
+#: .\simulationGame\templates\partials\winner_modal.html:26
+msgid "Gesamtumsatz"
+msgstr "Total revenue"
+
+#: .\simulationGame\templates\partials\winner_modal.html:33
+msgid "Spiel wiederholen"
+msgstr "Play again"
+
+#: .\simulationGame\templates\round_site.html:4
+#, python-format
+msgid "Spieler %(market)s ist dran"
+msgstr "Player %(market)s's sturn"
+
+#: .\simulationGame\templates\welcome.html:4
+msgid "Willkommenseite"
+msgstr "Welcome Page"
+
+#: .\simulationGame\views.py:11
+msgid "Welcome to my site."
+msgstr "Willkomen auf meiner Seite"
+
+#, fuzzy
+#~| msgid ""
+#~| " Wechselseitiger Effekt:\" </strong><br>\n"
+#~| "                Dieser beschreibt, wie die Anzahl der Individuellen auf "
+#~| "Käufer- und Verkäuferseite sich gegenseitig beeinflussen:"
+#~ msgid ""
+#~ " Wechselseitiger Effekt:</strong><br>\n"
+#~ "                Dieser beschreibt, wie die Anzahl der Individuellen auf "
+#~ "Käufer- und Verkäuferseite sich gegenseitig beeinflussen:"
+#~ msgstr ""
+#~ "<strong>Cross-Side Effect:</strong><br>This describes how the number of "
+#~ "individuals on the buyer and seller sides influence each other:"
+
+#~ msgid ""
+#~ "<li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer weniger.</li>"
+#~ msgstr "<li><b>Option 1:</b> Seller has more influence than buyer.</li>"
+
+#~ msgid ""
+#~ "<li><b>Option 2:</b> Käufer hat starken Einfluss, Verkäufer weniger.</li>"
+#~ msgstr "<li><b>Option 2:</b> Buyer has more influence than seller.</li>"
+
+#~ msgid ""
+#~ "<li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich stark.</li>"
+#~ msgstr "<li><b>Option 3:</b> Both sides influence each other equally.</li>"
+
+#~ msgid "Verkäufer-Effekt: groß, Käufer-Effekt: klein"
+#~ msgstr "Seller effect: high, Buyer effect: low"
+
+#~ msgid "Verkäufer-Effekt: klein, Käufer-Effekt: groß"
+#~ msgstr "Seller effect: low, Buyer effect: high"
+
+#~ msgid "Gleiche Effekte auf Verkäufer- und Käuferseite"
+#~ msgstr "Equal effects for sellers and buyers"

@@ -1,7 +1,7 @@
 :root {
   --modal-width: clamp(240px, 80vw, 540px);
   --modal-reults-width: clamp(300px, 80vw, 600px);
-  --modal-winner-width: clamp(240px, 80vw, 360px);
+  --modal-winner-width: clamp(240px, 80vw, 400px);
 }
 body {
     background-image: url('../images/background.jpg'); 
@@ -15,15 +15,17 @@ body {
     background-attachment: fixed;
     overflow-y: auto;
     overflow-x: hidden;
-  /*  display: flex;
-    align-items: center;
-    justify-content: center; */
 }
-/*
-h1 {
-    color: red;
+ .page-wrap {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* Card in der MItte */
+  justify-content: flex-start;
+  padding-top: 2dvw;
+  gap: min(9vw, 60px);
 }
-*/
+
 * {
     margin: 0px;
 }

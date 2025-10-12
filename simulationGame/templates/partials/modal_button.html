@@ -1,0 +1,31 @@
+{% load i18n %}
+<div class= "button-overlay">
+<button class = "modale-button">
+    {% translate "Spiel neu starten" %}
+</button>
+
+<dialog class="modale" id="modale">
+  <h3>{% translate "Möchtest du das Spiel wirklich neu starten?" %}</h3>
+  <div class="modale-footer">
+    <a href="{% url 'welcome' %}">
+        <button class="footer-button">{% translate "Ja, neu starten" %}</button>
+    </a>
+    <button type="button" class="footer-button cancel">{% translate "Abbrechen" %}</button>
+      </div>
+</dialog>
+
+</div>
+
+<script>
+    const modale = document.querySelector("#modale")
+    const modalButton = document.querySelector(".modale-button")
+    const okButton = document.querySelector(".ok-button")
+    const cancelButton = document.querySelector(".cancel")
+    console.log("Hallo")
+    modalButton.addEventListener("click", () => {
+        modale.showModal();
+    })
+    cancelButton.addEventListener("click", () => {
+        modale.close()
+    })
+</script>

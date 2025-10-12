@@ -1,0 +1,32 @@
+
+.language-select {
+  background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
+  border-radius: 15px;
+  font-family:Arial;
+  padding: clamp(0.5rem, 0.431rem + 0.46vw, 0.625rem) clamp(0.625rem, 0.556rem + 0.46vw, 0.75rem);
+  cursor: pointer;
+  border: 2px solid hsl(34, 55%, 63%);
+  font-size: clamp(0.75rem, 0.474rem + 1.839vw, 1.25rem);
+  /* width: 300px; */
+}
+.modale h3 {
+  font-size: clamp(0.75rem, 0.581rem + 1.127vw, 1.25rem);
+  text-align: left;
+}
+
+.language-select:hover {
+ /* background-color: #d4a373; */
+}
+
+.language-form {
+  width: 97dvw;                          /* fast volle Breite */
+  display: flex;
+  justify-content: flex-end;              /* nach rechts schieben */
+  /* padding: 12px clamp(8px, 3vw, 24px); */    /* schöner Innenabstand */
+}
+
+@media(max-width: 320px){
+  .language-select {
+    border: 1px solid #d4a76c;
+  }
+}

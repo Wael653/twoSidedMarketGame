@@ -1,18 +1,20 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+
 <div class="custom-modal21"> 
   <div class="custom-modal-content40">
     <div class="basket">🧺</div> <!--"bi bi-shop"-->
-    <h1 class="willkommen-title">Willkommen</h1>
-    <h2 class="subtitle">zum Flohmarkt-Simulationsspiel!</h2>
+    <h1 class="willkommen-title">{% translate "Willkommen" %}</h1>
+    <h2 class="subtitle">{% translate "zum Flohmarkt-Simulationsspiel!" %}</h2>
     <p class="info-text">
-      Klicke <a href="instructions" class="info-link">hier</a> um zu erfahren,<br>
-      wie das Spiel funktioniert.
+    {% blocktranslate %} Klicke <a href="instructions" class="info-link">hier</a>, um zu erfahren,<br>
+      wie das Spiel funktioniert. {% endblocktranslate %}
     </p>
     <a href="{% url 'configuration' %}">
-    <button class="spiel-starten-btn">Spiel starten</button>
+    <button class="spiel-starten-btn">{% translate "Spiel starten" %}</button>
     </a>
   </div>
-</body>
+</div>
