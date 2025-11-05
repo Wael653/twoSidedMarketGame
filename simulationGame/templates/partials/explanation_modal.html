@@ -1,4 +1,3 @@
-<html lang="de">
 {% load i18n %}
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,6 +13,11 @@
     letter-spacing:.2px;
     font-weight:800;
   }
+ 
+.MJX-TEX {
+ font-size: 4cqw;
+ max-width: 100%;
+}
 
 
 .avatar {
@@ -25,7 +29,9 @@
   box-shadow: inset 0 2px 8px rgba(0,0,0,.08);     
   display:flex;
   align-items:center;
-  justify-content:center;                    
+  justify-content:center;             
+  overflow: hidden;         
+  object-fit: cover;       
 }
   .player {
     text-align:center; 
@@ -82,7 +88,7 @@
     <section class="players">
         <div class="player">
             <div class="avatar">
-                <img src="../../static/images/spieler1.png" alt="Benutzer Avatar">
+                <img src="../../static/images/player1.png" alt="Benutzer Avatar">
             </div>
             <div class="label">{% translate "SPIELER A" %}</div>  
         </div>
@@ -94,7 +100,7 @@
 
         <div class="player">
           <div class="avatar">
-            <img src="../../static/images/spieler2.png" alt="Benutzer Avatar">
+            <img src="../../static/images/player2.png" alt="Benutzer Avatar">
           </div>
           <div class="label">{% translate "SPIELER B" %}</div>
         </div>
@@ -129,6 +135,70 @@
       {% endblocktranslate %}
       {% blocktranslate %}
       <strong>Wechselseitiger Effekt:</strong> 
+      <ul>
+        <li>
+          Ein <strong>zentraler Aspekt</strong> in einem <strong>zweiseitigen Markt</strong> und beschreibt,
+          wie sich die beiden <strong>Marktseiten</strong> (<strong>Verkäufer</strong> und <strong>Käufer</strong>) 
+          <strong>gegenseitig beeinflussen</strong>:
+          <ul>
+            <li>Wenn mehr <strong>Verkäufer</strong> auf dem Markt sind, wird dieser für 
+                <strong>Käufer attraktiver</strong> (<em>größere Auswahl</em>).</li>
+            <li>Wenn mehr <strong>Käufer</strong> da sind, wird der Markt für 
+                <strong>Verkäufer attraktiver</strong> (<em>mehr potenzielle Kunden und höhere Umsätze</em>).</li>
+          </ul>
+        </li>
+      </ul>
+      {% endblocktranslate %}
+      {% blocktranslate %}
+      <strong>Entscheidung der Akteure:</strong>
+      <ul>
+        <li>
+          In jeder Runde wählt jeder <strong>Akteur</strong> (<strong>Käufer</strong> oder <strong>Verkäufer</strong>) 
+          genau einen der beiden Flohmärkte (<strong>A</strong> oder <strong>B</strong>).
+        </li>
+        <li>
+          <strong>Entscheidungsregel</strong>:
+          <ul>
+            <li>Berechne den <strong>Nutzen in Markt A</strong>: <em>U<sub>A</sub></em>.</li>
+            <li>Berechne den <strong>Nutzen in Markt B</strong>: <em>U<sub>B</sub></em>.</li>
+            <li>Der Akteur wählt den Markt mit dem <strong>höheren positiven Nutzen</strong> 
+                (<em>max(U<sub>A</sub>, U<sub>B</sub>) &gt; 0</em>).</li>
+                
+          </ul>
+        </li>
+        <li>
+          <strong>Kein positiver Nutzen</strong>: 
+          Ergibt sich <em>max(U<sub>A</sub>, U<sub>B</sub>) &le; 0</em>, 
+          steigt der Akteur aus dem Markt aus und wird in der nächsten Runde erneut berücksichtigt.
+        </li>
+        <li>
+          <strong>Nutzenfunktionen</strong>:
+          <ul>
+            <li><strong>Käufer</strong>: \(U^{j}_B = ZB_j + \alpha \cdot \frac{m^{t-1}_A}{100} - 0.8 \cdot p_b + PF^{j}\)</li>
+            <br>
+            <li><strong>Verkäufer</strong>: \(U^{i}_S\) = \(ZB_{i} + \beta \cdot \frac{n^{t-1}_A}{1000} - 0.2 \cdot p_s - AK^{i}\)</li>
+          </ul>
+        </li>
+        <br>
+        <li>
+        <strong>Erklärung der Paramter in den Formeln mit ihren Werten:</strong>
+          <ul>
+            <li><strong>\(ZB:\)</strong> Zahlungsbereitschaft für Käufer(4€ - 22€) oder Verkäufer(5€ - 30€) </li>
+            <li><strong>\(\beta:\)</strong> Stärke des Käufereffekts (20, 25 oder 32)</li>
+            <li><strong>\(\alpha:\)</strong> Stärke des Verkäufereffekts (20, 25 oder 32)</li>
+            <li><strong>\(PF:\)</strong> individuelle Käuferpräferenz für einen der beiden Märkten (0 - 9)</li>
+            <li><strong>\(AK:\)</strong> Individuelle Anfahrtkosten der Verkäufer zu einem Markt (0, 1, 3, 5, 7 oder 9)</li>
+          </ul>                                                                          
+        </li>
+        <li>
+          <strong>Gleichstand</strong>: 
+          Bei <em>U<sub>S</sub> = U<sub>B</sub> &gt; 0</em> wird der Markt zufällig 
+          entschieden werden.
+        </li>
+      </ul>
+      {% endblocktranslate %}
+      {% blocktranslate %}
+      <strong>Startmarktaufteilung :</strong> 
       <ul>
         <li>
           Ein <strong>zentraler Aspekt</strong> in einem <strong>zweiseitigen Markt</strong> und beschreibt,
@@ -185,4 +255,23 @@
   </main>
 
 </body>
-</html>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']],
+  },
+  options: {
+    renderActions: {
+      addMenu: [0, '', ''] // deaktiviert MathJax-Menü
+    }
+  },
+  chtml: {
+    scale: 1,          // Schriftgröße
+    displayAlign: 'left',
+    displayIndent: '0em',
+    linebreaks: { automatic: true } // erlaubt automatischen Zeilenumbruch
+  }
+};
+</script>
+

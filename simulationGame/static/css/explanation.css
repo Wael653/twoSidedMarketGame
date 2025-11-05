@@ -7,6 +7,7 @@
     font-family: Sans-serif;
     color: #7e5d4a;
     margin-bottom: 0.5rem;
+    margin-top: 4cqw;
 }
 button.btn-instruction {
     font-size:  5cqw;
@@ -23,7 +24,6 @@ button.btn-instruction:active {
     flex-direction: column;
     gap:3cqw;
     text-align:center;
-    /* margin:6px 0 8px; */
     box-shadow: 0 2px 8px rgba(124, 94, 72, 0.09);
   }
   .card {
@@ -59,7 +59,8 @@ button.btn-instruction:active {
     gap: clamp(0.8rem, 8cqw, 3rem);
     /* align-items:end; */
     justify-items:center;
-    margin:8px 0 6px;
+    margin: 4cqw 0 6px;
+    font-family: Arial;
   }
   @keyframes modalIn {
      from { opacity: 0; transform: scale(0.5);}
@@ -70,6 +71,10 @@ button.btn-instruction:active {
   width:95%;
   height:95%;
   display:block;
+}
+
+.MathJax {
+  font-size: clamp(0.688rem, 0.388rem + 2vw, 1.063rem);
 }
 
 
@@ -90,13 +95,14 @@ button.btn-instruction:active {
 }
 
  .rules{
-    margin: 3cqw auto;
+    margin: 4cqw auto;
     margin-bottom: 0;
     font-size:clamp(0.688rem, 0.388rem + 2vw, 1.063rem);
     line-height:1.55;
     width:min(780px, 100%);
     color: #7e5d4a;
     position: relative;
+    font-family: Arial;
   }
   .rules > ul {
   list-style-type: square;

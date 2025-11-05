@@ -1,6 +1,6 @@
 :root {
-  --modal-width: clamp(240px, 80vw, 540px);
-  --modal-reults-width: clamp(300px, 80vw, 600px);
+  --modal-width: clamp(240px, 85vw, 560px);
+  --modal-reults-width: clamp(300px, 90vw, 600px);
   --modal-winner-width: clamp(240px, 80vw, 400px);
 }
 body {
@@ -19,16 +19,18 @@ body {
  .page-wrap {
   min-height: 100dvh;
   display: flex;
+  /* padding-block: 0; */
   flex-direction: column;
   align-items: center;         /* Card in der MItte */
-  justify-content: flex-start;
-  padding-top: 2dvw;
-  gap: min(9vw, 60px);
+  /* justify-content: center; */
+  padding-top: 2dvh;
+  gap: min(8vw, 40px);
 }
 
 * {
     margin: 0px;
 }
 html {
-    margin: 0
+    margin: 0;
+    padding: 0
 }

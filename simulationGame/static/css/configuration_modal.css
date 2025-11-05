@@ -39,7 +39,7 @@
   display: flex;
   justify-content: center;
   /* text-align: center; */
-  margin-bottom: 30px;
+  margin-bottom: 8cqw;
   /* gap: 0rem; */
 }
 
@@ -52,7 +52,7 @@
 
 .modal-header {
     max-width: 100%;
-}  
+}
 .modal-title {
   /* font-size: clamp(1.6rem, 6.8cqw, 2.6rem); */
   white-space: nowrap;
@@ -82,20 +82,19 @@ i.bi.bi-gear-fill {
     flex: 0 1 auto;
 }
 
-/*.modal-header > * { min-width: 0; } */
-/*.modal-icon {
-  width: 38px;
-  margin-right: 12px;
-} */
+.bi-shop {
+  color: #7e5d4a;
+  font-size: 5cqw;
+}
 
 
 .modal-desc {
   font-family: sans-serif;
   text-align: start;
-  margin-bottom: 5.8cqw;
+  margin-bottom: 7cqw;
   color: #7e5d4a;
-  font-size: max(4.3cqw,1px);
-  font-weight: bold;
+  font-size: 4.6cqw;
+  /* font-weight: bold; */
   /* text-align: center; */
 }
 .modal-row6 {
@@ -105,7 +104,7 @@ i.bi.bi-gear-fill {
     /* gap: 23cqw; */
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 7.8cqw;
+    margin-bottom: 7cqw;
     min-width: 0;
     width: 93%;
     /* width: 100%; */
@@ -114,7 +113,7 @@ i.bi.bi-gear-fill {
 .wrap-second-row {
   display: flex;
   justify-content: space-between;
-  /* width: 95%; */
+  margin-bottom: 7cqw;
 }
 
 
@@ -122,9 +121,6 @@ i.bi.bi-gear-fill {
     align-items: flex-start;
 }
 
-.wrap-second-row {
-    gap: .4rem;
-}
 
 .modal-row6 {
     max-width: 100%;
@@ -218,8 +214,8 @@ button.simulation-start-btn {
 }
 
 .simulation-start-btn:active {
-  background: #dda15e;     
-  transform: scale(0.92);   
+  background: #dda15e;
+  transform: scale(0.92);
 }
 
 
@@ -277,8 +273,11 @@ button.simulation-start-btn {
 
 
 .tooltip-text.align-end { left: auto; right: 0; transform: none; }
-.tooltip-text.align-start { left: 0; right: auto; transform: none; } 
+.tooltip-text.align-start { left: 0; right: auto; transform: none; }
 
+.market-share-icon {
+  font-size: 1rem;
+}
 
 .hidden {
   display: none;
@@ -299,18 +298,17 @@ button.simulation-start-btn {
 
 .tooltip-wrapper {
   position: relative;
-  flex: 1 1 auto;            
+  flex: 1 1 auto;
   display: flex;
   justify-content: flex-end; /* Icon bleibt rechts */
- 
 }
 
 .bi-clock-fill, .bi-basket-fill {
   font-size: min(1.4rem,5cqw);
   color: #7e5d4a;
-  /* margin-right: 0.5rem; */
   max-width: 100%;
 }
+
 
 .row2-wrap{
   position: relative;
@@ -355,6 +353,10 @@ button.simulation-start-btn {
   .tooltip-arrow {
   transform: translateX(-21%);
 }
+
+.modal-desc {
+    text-align: center;
+}
   .modal-row6 {
     flex-direction: column;
     gap: 0.5rem;
@@ -362,7 +364,7 @@ button.simulation-start-btn {
   }
    .modal-row6:first-child {
   margin-bottom: 0;
-  
+
 }
 .info-icon23 {
     font-size: min(6cqw);
@@ -383,7 +385,7 @@ button.simulation-start-btn {
 }
 @media (max-width: 320px) {
   .tooltip-text {
-    
+
 width: 60cqw;
   }
   .tooltip-arrow {

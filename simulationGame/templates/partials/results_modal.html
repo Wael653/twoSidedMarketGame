@@ -1,32 +1,5 @@
 {% load i18n %}
 <script src="{% url 'javascript-catalog' %}"></script>
-  <style>
-/*
-    .charts-container.hidden {
-      display:none 
-    }
-*/
-    #chart-supplier {
-      width: 100%;
-      height: 400px;
-      display: block;
-      margin-bottom: 3rem;
-    }
-    #chart-buyer {
-      width: 100%;
-      height: 400px;
-      display: block;
-      margin-bottom: 3rem;
-    }
-
-    #chart-sales {
-      width: 100%;
-      height: 400px;
-      display: block;
-    }
- 
-  
-  </style>
 </head>
 <body>
   <div class="container">
@@ -37,19 +10,17 @@
           <div><strong>{% translate "Flohmarkt A" %}</strong></div>
           <div>{% translate "Verkäufer:" %} <span class="count" data-target="{{suppliers_number_A}}">{{suppliers_number_A}}</span></div>
           <div>{% translate "Käufer:" %} <span class="count" data-target="{{buyers_number_A}}">{{buyers_number_A}}</span></div>
-          <div>{% translate "Umsatz:" %} <span class="count" data-target="{{UmsatzA}}" data-suffix=" €">{{UmsatzA}}</span></div>
           <div>{% translate "Standmiete:" %} <span class="count" data-target="{{stand_rental_A}}" data-suffix=" €" data-round="0">{{stand_rental_A}}</span></div>
           <div>{% translate "Eintrittsgebühr:" %} <span class="count" data-target="{{entrance_fee_A}}" data-suffix=" €" data-round="0">{{entrance_fee_A}}</span></div>
-          
+          <div class = "sale-box"><span class = "sale-label">{% translate "Umsatz:" %}</span> <span class="count sale-value" data-target="{{UmsatzA}}" data-suffix=" €">{{UmsatzA}}</span></div>
         </div>
         <div>
           <div><strong>{% translate "Flohmarkt B" %}</strong></div>
           <div>{% translate "Verkäufer:" %} <span class="count" data-target="{{suppliers_number_B}}">{{suppliers_number_B}}</span></div>
           <div>{% translate "Käufer:" %} <span class="count" data-target="{{buyers_number_B}}">{{buyers_number_B}}</span></div>
-          <div>{% translate "Umsatz:" %} <span class="count" data-target="{{UmsatzB}}" data-suffix=" €">{{UmsatzB}}</span></div>
           <div>{% translate "Standmiete:" %} <span class="count" data-target="{{stand_rental_B}}" data-suffix=" €" data-round="0">{{stand_rental_B}}</span></div>
           <div>{% translate "Eintrittsgebühr:" %} <span class="count" data-target="{{entrance_fee_B}}" data-suffix=" €" data-round="0">{{entrance_fee_B}}</span></div>
-          
+          <div class = "sale-box"><span class = "sale-label" >{% translate "Umsatz:" %}</span> <span class="count sale-value sale-value-b" data-target="{{UmsatzB}}" data-suffix=" €">{{UmsatzB}}</span></div>
         </div>
       </div>
       <a href=" {% if last_round %}

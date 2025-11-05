@@ -30,8 +30,8 @@ class Command(BaseCommand):
                 buyer_id=row['Käufer-ID'], 
                 willingness_to_pay=row['ZB_B'],
                 preference=row['Preference'],
-                out_door_pf=row['Outdoor'],
-                in_door_pf=row['Indoor'],
+            #    out_door_pf=row['Outdoor'],
+            #    in_door_pf=row['Indoor'],
             )
             for _, row in df_buyers.iterrows()
         ]

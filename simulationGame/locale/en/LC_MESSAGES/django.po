@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-12 15:04+0200\n"
+"POT-Creation-Date: 2025-10-31 01:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,7 @@ msgstr "Number of rounds:"
 
 #: .\simulationGame\templates\partials\configuration_modal.html:23
 #: .\simulationGame\templates\partials\configuration_modal.html:39
+#: .\simulationGame\templates\partials\configuration_modal.html:73
 msgid "wählen"
 msgstr "select"
 
@@ -54,12 +55,24 @@ msgstr ""
 "              "
 
 #: .\simulationGame\templates\partials\configuration_modal.html:55
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "              <ul>\n"
+#| "                <li><b>Option 1:</b> Verkäufer hat starken Einfluss, "
+#| "Käufer weniger.</li>\n"
+#| "                <li><b>Option 1:</b> Käufer hat starken Einfluss, "
+#| "Verkäufer weniger.</li>\n"
+#| "                <li><b>Option 3:</b> Beide Seiten beeinflussen sich "
+#| "gleich stark.</li>\n"
+#| "              </ul>\n"
+#| "              "
 msgid ""
 "\n"
 "              <ul>\n"
 "                <li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer "
 "weniger.</li>\n"
-"                <li><b>Option 1:</b> Käufer hat starken Einfluss, Verkäufer "
+"                <li><b>Option 2:</b> Käufer hat starken Einfluss, Verkäufer "
 "weniger.</li>\n"
 "                <li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich "
 "stark.</li>\n"
@@ -77,33 +90,43 @@ msgstr ""
 "              </ul>\n"
 "              "
 
-#: .\simulationGame\templates\partials\configuration_modal.html:66
+#: .\simulationGame\templates\partials\configuration_modal.html:70
+msgid "Marktanteil:"
+msgstr "market share"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:74
+msgid "homogen"
+msgstr "homogeneous"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:75
+msgid "inhomogen"
+msgstr "inhomogeneous"
+
+#: .\simulationGame\templates\partials\configuration_modal.html:79
 msgid "Simulation starten"
 msgstr "Start simulation"
 
-#: .\simulationGame\templates\partials\configuration_modal.html:70
-#, fuzzy, python-format
-#| msgid "%(error)s"
+#: .\simulationGame\templates\partials\configuration_modal.html:83
 msgid "%(error)s"
-msgstr "Please select both options."
+msgstr "Please select all options."
 
-#: .\simulationGame\templates\partials\explanation_modal.html:78
+#: .\simulationGame\templates\partials\explanation_modal.html:80
 msgid "Anleitung"
 msgstr "instruction"
 
-#: .\simulationGame\templates\partials\explanation_modal.html:79
+#: .\simulationGame\templates\partials\explanation_modal.html:81
 msgid "Spiel mit einem Freund zusammen!"
 msgstr "Play with a friend"
 
-#: .\simulationGame\templates\partials\explanation_modal.html:87
+#: .\simulationGame\templates\partials\explanation_modal.html:89
 msgid "SPIELER A"
 msgstr "Player A"
 
-#: .\simulationGame\templates\partials\explanation_modal.html:99
+#: .\simulationGame\templates\partials\explanation_modal.html:101
 msgid "SPIELER B"
 msgstr "Player B"
 
-#: .\simulationGame\templates\partials\explanation_modal.html:103
+#: .\simulationGame\templates\partials\explanation_modal.html:105
 msgid ""
 "\n"
 "      <strong>Spielübersicht:</strong>\n"
@@ -137,7 +160,7 @@ msgstr ""
 "        </ul>\n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:116
+#: .\simulationGame\templates\partials\explanation_modal.html:118
 msgid ""
 "\n"
 "      <strong>Ziel:</strong>\n"
@@ -155,7 +178,7 @@ msgstr ""
 "        </ul> \n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:122
+#: .\simulationGame\templates\partials\explanation_modal.html:124
 msgid ""
 "\n"
 "      <strong>Spielablauf:</strong>\n"
@@ -180,7 +203,7 @@ msgstr ""
 "        </ul>\n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:130
+#: .\simulationGame\templates\partials\explanation_modal.html:132
 msgid ""
 "\n"
 "      <strong>Wechselseitiger Effekt:</strong> \n"
@@ -228,7 +251,7 @@ msgstr ""
 "      </ul>\n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:146
+#: .\simulationGame\templates\partials\explanation_modal.html:148
 msgid ""
 "\n"
 "      <strong>Ablauf einer Runde:</strong>\n"
@@ -293,7 +316,7 @@ msgstr ""
 "        </ul>\n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:174
+#: .\simulationGame\templates\partials\explanation_modal.html:176
 msgid ""
 "\n"
 "      <strong>Spielende:</strong>\n"
@@ -315,7 +338,7 @@ msgstr ""
 "        </ul>\n"
 "      "
 
-#: .\simulationGame\templates\partials\explanation_modal.html:183
+#: .\simulationGame\templates\partials\explanation_modal.html:185
 msgid "Verstanden!"
 msgstr "Got it!"
 
@@ -335,69 +358,69 @@ msgstr "Yes, restart"
 msgid "Abbrechen"
 msgstr "Cancel"
 
-#: .\simulationGame\templates\partials\results_modal.html:33
+#: .\simulationGame\templates\partials\results_modal.html:6
 #: .\simulationGame\templates\results_site.html:4
 #, python-format
 msgid "Ergebnisse Runde %(round_number)s"
 msgstr "Results Round %(round_number)s"
 
-#: .\simulationGame\templates\partials\results_modal.html:37
+#: .\simulationGame\templates\partials\results_modal.html:10
 #: .\simulationGame\templates\partials\winner_modal.html:19
 msgid "Flohmarkt A"
 msgstr "Flea Market A"
 
-#: .\simulationGame\templates\partials\results_modal.html:38
-#: .\simulationGame\templates\partials\results_modal.html:47
+#: .\simulationGame\templates\partials\results_modal.html:11
+#: .\simulationGame\templates\partials\results_modal.html:19
 msgid "Verkäufer:"
 msgstr "Seller:"
 
-#: .\simulationGame\templates\partials\results_modal.html:39
-#: .\simulationGame\templates\partials\results_modal.html:48
+#: .\simulationGame\templates\partials\results_modal.html:12
+#: .\simulationGame\templates\partials\results_modal.html:20
 msgid "Käufer:"
 msgstr "Buyer:"
 
-#: .\simulationGame\templates\partials\results_modal.html:40
-#: .\simulationGame\templates\partials\results_modal.html:49
-msgid "Umsatz:"
-msgstr "Revenue:"
-
-#: .\simulationGame\templates\partials\results_modal.html:41
-#: .\simulationGame\templates\partials\results_modal.html:50
+#: .\simulationGame\templates\partials\results_modal.html:13
+#: .\simulationGame\templates\partials\results_modal.html:21
 msgid "Standmiete:"
 msgstr "Stand Rental:"
 
-#: .\simulationGame\templates\partials\results_modal.html:42
-#: .\simulationGame\templates\partials\results_modal.html:51
+#: .\simulationGame\templates\partials\results_modal.html:14
+#: .\simulationGame\templates\partials\results_modal.html:22
 msgid "Eintrittsgebühr:"
 msgstr "Entrance fee:"
 
-#: .\simulationGame\templates\partials\results_modal.html:46
+#: .\simulationGame\templates\partials\results_modal.html:15
+#: .\simulationGame\templates\partials\results_modal.html:23
+msgid "Umsatz:"
+msgstr "Revenue:"
+
+#: .\simulationGame\templates\partials\results_modal.html:18
 #: .\simulationGame\templates\partials\winner_modal.html:24
 msgid "Flohmarkt B"
 msgstr "Flea Market B"
 
-#: .\simulationGame\templates\partials\results_modal.html:62
+#: .\simulationGame\templates\partials\results_modal.html:33
 msgid "Gewinner anzeigen"
 msgstr "Show winner"
 
-#: .\simulationGame\templates\partials\results_modal.html:64
+#: .\simulationGame\templates\partials\results_modal.html:35
 #, python-format
 msgid "weiter zur Runde %(nxt_round)s"
 msgstr "Continue to round %(nxt_round)s"
 
-#: .\simulationGame\templates\partials\results_modal.html:69
+#: .\simulationGame\templates\partials\results_modal.html:40
 msgid "Diagramme anzeigen"
 msgstr "Show charts"
 
-#: .\simulationGame\templates\partials\results_modal.html:74
+#: .\simulationGame\templates\partials\results_modal.html:45
 msgid "Anzahl der Veräufer"
 msgstr "Number of sellers"
 
-#: .\simulationGame\templates\partials\results_modal.html:76
+#: .\simulationGame\templates\partials\results_modal.html:47
 msgid "Anzahl der Käufer"
 msgstr "Number of buyers"
 
-#: .\simulationGame\templates\partials\results_modal.html:78
+#: .\simulationGame\templates\partials\results_modal.html:49
 msgid "Umsätze"
 msgstr "Revenues"
 
@@ -405,23 +428,23 @@ msgstr "Revenues"
 msgid "Runde"
 msgstr "Round"
 
-#: .\simulationGame\templates\partials\round_modal.html:14
+#: .\simulationGame\templates\partials\round_modal.html:11
 msgid "Flohmarkt"
 msgstr "Flea Market"
 
-#: .\simulationGame\templates\partials\round_modal.html:18
+#: .\simulationGame\templates\partials\round_modal.html:15
 msgid "Standmiete für Verkäufer"
 msgstr "Stand rental for sellers"
 
-#: .\simulationGame\templates\partials\round_modal.html:28
+#: .\simulationGame\templates\partials\round_modal.html:25
 msgid "Eintrittsgebühr für Käufer"
 msgstr "Entrance fee for buyers"
 
-#: .\simulationGame\templates\partials\round_modal.html:39
+#: .\simulationGame\templates\partials\round_modal.html:36
 msgid "weiter zu Flohmarkt B"
 msgstr "Continue to Flea Market B"
 
-#: .\simulationGame\templates\partials\round_modal.html:41
+#: .\simulationGame\templates\partials\round_modal.html:38
 msgid "weiter zur Berechnung"
 msgstr "Continue to calculation"
 
@@ -476,7 +499,7 @@ msgstr "Player %(market)s's sturn"
 msgid "Willkommenseite"
 msgstr "Welcome Page"
 
-#: .\simulationGame\views.py:11
+#: .\simulationGame\views.py:14
 msgid "Welcome to my site."
 msgstr "Willkomen auf meiner Seite"
 

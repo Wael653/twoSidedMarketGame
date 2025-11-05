@@ -7,7 +7,7 @@
   align-items: center;
   gap: clamp(0.8rem, 3.2cqw, 2rem);
   justify-content: flex-start;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
 }
 
 
@@ -22,7 +22,7 @@
   background: #fffbe7;
   border-radius: 22px;
   text-align: center;
-  font-family: 'Comic Sans MS';
+  font-family: Comic Sans MS;
   font-weight: bold;
   color: #bc4749;
   font-size: clamp(1.4rem, 7cqw, 3rem);
@@ -33,8 +33,8 @@
 .round-modal {
   box-sizing: border-box;
   width: 100%;
-  /* background: #fffbe7; 
-  background: #E6F8FB; 
+  /* background: #fffbe7;
+  background: #E6F8FB;
   border: 3px solid #b6a18b; */
   border-radius: 32px;
   margin: 0;
@@ -48,11 +48,9 @@
 }
 .market-a {
   background-color: #dfecf7;
-  border: 2px solid #0199e6cc;
+  border: 2.5px solid #0199e6cc;
   color: #1A9CB7;
 }
-
-
 
 .btn-a {
   background: #276476;
@@ -60,23 +58,45 @@
 .btn-a:hover {
   background: #5babc4;
 }
+.btn-b {
+  background: #762727;
+}
+.btn-b:hover {
+  background: #c45b5b;
+}
+
 .market-b {
-  background-color: #fff0f5;
-  border: 2px solid #cc0055;
-  /* alle Eigenschaften für B */
+  background-color: #f7dfdf;
+  border: 2.5px solid #e60101b0;
+  color: #b71a1a;
 }
 
 .header-a {
   background:#dfecf7;
   color: #1A9CB7;
-  display: flex;
-  border: 2px solid #0199e6cc;
+  border: 2.5px solid #0199e6cc;
+  font-family: Comic Sans MS;
+}
+
+
+.header-b {
+  background: #f7dfdf;
+  color: #b71a1a;
+  border: 2.5px solid #e60101b0;
+  font-family: Comic Sans MS;
 }
 
 @keyframes overlay-blue {
-      33% { box-shadow: 0 0 40px 15px rgba(87, 193, 241, 0.6); }
-      66% { box-shadow: 0 0 70px 30px rgba(8, 101, 241, 0.4); }
-      100% { box-shadow: 0 0 0 rgba(85, 201, 243, 0.3); }
+      0% { box-shadow: 0 0 20px 5px rgba(65, 134, 153, 0.6) }
+      33% { box-shadow: 0 0 20px 10px rgba(87, 193, 241, 0.6) }
+      66% { box-shadow: 0 0 20px 15px rgba(8, 101, 241, 0.4) }
+      100% { box-shadow: 0 0 20px 20px rgba(85, 201, 243, 0.3) }
+    }
+@keyframes overlay-red {
+      0% { box-shadow: 0 0 20px 5px rgba(153, 65, 65, 0.6); }
+      33% { box-shadow: 0 0 20px 10px rgba(241, 87, 87, 0.6); }
+      66% { box-shadow: 0 0 20px 15px rgba(241, 8, 8, 0.4); }
+      100% { box-shadow: 0 0 20px 20px rgba(243, 85, 85, 0.3); }
     }
 
 @keyframes modalIn2 {
@@ -97,28 +117,27 @@
     width: fit-content;
     border-radius: 16px;
     padding: 2cqw;
-    animation: overlay-blue 0.9s ease-out;
 }
 
-/*
-.flohmarkt-title::before {
-    content: "🧺"; 
-    font-size: 3rem;
-    margin-right: 0px;
-    vertical-align: baseline;
-   
-} 
-    */
+.title-a {
+  animation: overlay-blue 0.9s linear;
+}
+
+.title-b {
+  animation: overlay-red 0.9s linear;
+}
+
+
 /* Input-Reihe */
 .input-row {
     display: flex;
     flex-direction: column;
- /*   justify-content: flex-start; 
+ /*   justify-content: flex-start;
     align-items: stretch;  */
 /*    width: fit-content; */
  /*   margin: 12px 0 2px 0; */
-    width: 100%; 
-/*    max-width: 340px; */ 
+    width: 100%;
+/*    max-width: 340px; */
 }
 .round-label {
     /* color: #7e5d4a; */
@@ -132,65 +151,69 @@
 
 /* Input-Feld */
 .round-input {
-    box-sizing: border-box;
-    height: clamp(1rem, 12cqw, 50px);
-    /* margin-bottom: 12cqw; */
+    height: clamp(26px, 12cqw, 50px);
     font-size: 5cqw;
     padding: 0.1rem min(1rem, 3cqw) 0;
-    border: 2px solid  #a2bddb;
     border-radius: 16px;
     background-color: white;
     color: #856c4a;
-    font-family: inherit;
-    box-sizing: border-box;
     outline: none;
+    box-sizing: border-box;
     transition: border 0.2s, box-shadow 0.18s;
     box-shadow: 0 2px 12px rgba(180,150,80,0.07);
+    /* border: 2px solid #3185ac; */
 }
-.round-input:focus {
-    border: 2px solid #3988e2;
+.input-a {
+  border: 2px solid #a2bddb;
 }
+
+.input-a:focus {
+    border: 2px solid #3185ac;
+}
+.input-b {
+  border: 2px solid #dba2a2;
+}
+
+.input-b:focus {
+    border: 2px solid #ac3131;
+}
+
 
 /* Button */
 .round-btn {
-  margin: 0 auto;
-  /* width: 90%; */
-  /* background:  #6e7f4d; */
   color: #fffbe1;
-  /*  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif; */
   font-size: max(0.8rem, 6.5cqw);
   border: none;
   border-radius: 24px;
-  padding: 3.5cqw 5cqw;
+  padding: max(3cqw,8px) max(5cqw,11px);
   /*    margin-top: 15px; */
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
   /* width:90%; */
   /*  font-weight: bold; */
+  margin: 4cqw auto;
   letter-spacing: clamp(0px, 0.2cqw, 1px);
 }
 .round-btn:hover {
     transform: scale(1.05);
 }
 
-.round-btn:active {     
-  transform: scale(0.92);   
+.round-btn:active {
+  transform: scale(0.92);
 }
 
 /* Form */
 .form-content {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-   /* margin-left: 1rem; */
-   /* width: 70%; */
     gap: clamp(1rem, 7cqw, 2.6rem);
 }
 .round-input::placeholder {
   font-size: clamp(0.9rem, 4cqw, 1.8rem);
   font-family: Arial;
-  color: #888;       
+  color: #888;
   opacity: 0.7;
 
 }
@@ -200,6 +223,25 @@
 .round-input {
   border: 1.5px solid #a2bddb;
 }
+.markte-a {
+  border: 1.5px solid #0199e6cc;
+}
+.market-b {
+  border: 1.5px solid #e60101b0;
+}
+header-a {
+  border: 1.5px solid #0199e6cc;
+}
+header-b {
+  border: 1.5px solid #e60101b0;
+}
+.input-a:focus {
+  border: 1.5px solid #3185ac;
+}
+.input-b:focus {
+  border: 1.5px solid #ac3131;
+}
+
 }
 @media(max-width: 390px) {
 .round-input {
@@ -208,24 +250,17 @@
 .flohmarkt-title {
   letter-spacing: 1px;
 }
-.round-input:focus {
-    border: 1px solid #3988e2;
+.input-a:focus {
+  border: 1px solid #3185ac;
 }
+.input-b:focus {
+  border: 1px solid #ac3131;
 }
-/*
-.info-icon {
-  display: inline-block; 
-  margin-left: 6px;
-  cursor: pointer;
-  color: #444;
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  border: 1px solid #aaa;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  line-height: 16px;
-  background-color: #f9f9f9;
-  font-weight: bold;
+.market-a, .header-a {
+  border: 1.5px solid #0199e6cc;
 }
-  */
+.market-b, .header-b {
+  border: 1.5px solid #e60101b0;
+}
+
+}

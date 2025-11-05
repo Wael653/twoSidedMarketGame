@@ -65,13 +65,13 @@ h1.willkommen-title {
   /* white-space: nowrap; */
   font-family: Arial;
   color: #8e6d4f;
-  margin-bottom: clamp(0.6rem, -0.52rem + 7.467vw, 2rem);
+  margin-bottom: 3cqw;
   /* font-size: max(1rem, 2rem); */
   /* letter-spacing: 0.5px; */
 }
 
 h2.subtitle {
- font-size: max(13.512px, 6cqw);
+ font-size: max(13.512px, 5.5cqw);
 }
 
 
@@ -99,7 +99,8 @@ h2.subtitle {
   cursor: pointer;
   transition: transform 0.20s;
   font-family: inherit;
-  width: 45cqw;
+  /* width: 45cqw; */
+  margin-bottom: 2cqw;
 }
 
 button.spiel-starten-btn {

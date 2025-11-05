@@ -55,14 +55,27 @@
               {% blocktranslate %}
               <ul>
                 <li><b>Option 1:</b> Verkäufer hat starken Einfluss, Käufer weniger.</li>
-                <li><b>Option 1:</b> Käufer hat starken Einfluss, Verkäufer weniger.</li>
+                <li><b>Option 2:</b> Käufer hat starken Einfluss, Verkäufer weniger.</li>
                 <li><b>Option 3:</b> Beide Seiten beeinflussen sich gleich stark.</li>
               </ul>
               {% endblocktranslate %}
             </div>
           </div>       
         </div>
-      </div> 
+      </div>
+      <div class="wrap-third-row"> 
+        <div class="modal-row6">
+          <div class="wrap-baseline">
+            <i class="bi bi-shop"></i>   
+            <label class="option-label5">{% translate "Marktanteil:" %}</label>
+          </div>
+          <select id= "dynamicSelect0" name="market-share" class="modal-select" name="market-share">
+            <option value="">{% translate "wählen" %}</option>
+            <option value="hom">{% translate "homogen" %}</option>
+            <option value="inhom">{% translate "inhomogen" %}</option>
+          </select>
+        </div>
+      </div>
       <button type="submit" class="simulation-start-btn">{% translate "Simulation starten" %}</button>
     </form> 
        {% if error %}

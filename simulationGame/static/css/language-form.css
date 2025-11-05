@@ -7,22 +7,18 @@
   cursor: pointer;
   border: 2px solid hsl(34, 55%, 63%);
   font-size: clamp(0.75rem, 0.474rem + 1.839vw, 1.25rem);
-  /* width: 300px; */
+  color: #715c3a;
 }
 .modale h3 {
   font-size: clamp(0.75rem, 0.581rem + 1.127vw, 1.25rem);
   text-align: left;
 }
 
-.language-select:hover {
- /* background-color: #d4a373; */
-}
 
 .language-form {
-  width: 97dvw;                          /* fast volle Breite */
+  width: 97dvw;                          
   display: flex;
-  justify-content: flex-end;              /* nach rechts schieben */
-  /* padding: 12px clamp(8px, 3vw, 24px); */    /* schöner Innenabstand */
+  justify-content: flex-end;             
 }
 
 @media(max-width: 320px){

@@ -8,12 +8,12 @@
   <div class="round-wrap">
       <div class="round_header {% if market == 'A' %}header-a{% else %}header-b{% endif %}">{% translate "Runde" %} {{ round }}</div>
     <div class="round-modal {% if market == 'A' %}market-a{% else %}market-b{% endif %}">
-        <h2 class="flohmarkt-title">{% translate "Flohmarkt" %} {{ market }}</h2>
+        <h2 class="flohmarkt-title {% if market == 'A' %}title-a{% else %}title-b{% endif %}">{% translate "Flohmarkt" %} {{ market }}</h2>
       <form class="form-content" method = "post">
         {% csrf_token %}
         <div class="input-row">
           <label for="standmiete" class="round-label">{% translate "Standmiete für Verkäufer" %}</label>
-          <input type="number" class="round-input" name="standmiete" id= "standmiete" 
+          <input type="number" class="round-input {% if market == 'A' %}input-a{% else %}input-b{% endif %}" name="standmiete" id= "standmiete" 
           {% if LANGUAGE_CODE == 'de' %}
              placeholder="max. 200 Euro"
           {% elif LANGUAGE_CODE == 'en' %}
@@ -23,7 +23,7 @@
         </div>
         <div class="input-row">
           <label for="eintritt" class="round-label">{% translate "Eintrittsgebühr für Käufer" %}</label>
-          <input type="number" class="round-input" name = "eintritt" id = "eintritt"
+          <input type="number" class="round-input {% if market == 'A' %}input-a{% else %}input-b{% endif %}" name = "eintritt" id = "eintritt"
           {% if LANGUAGE_CODE == 'de' %}
              placeholder="max. 50 Euro"
           {% elif LANGUAGE_CODE == 'en' %}
