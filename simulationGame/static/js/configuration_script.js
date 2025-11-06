@@ -1,7 +1,7 @@
   //Passe das select Element dynamisch nach Breite der atuellen Option an
   
   
-  function adjustWidth(selectElement, selectElement0) {
+  function adjustWidth(selectElement, selectElement0, selectElement1 ) {
     const tempSpan = document.createElement("span");
     tempSpan.style.visibility = "hidden";
     tempSpan.style.position = "absolute";
@@ -19,13 +19,23 @@
     document.body.appendChild(tempSpan0);
     selectElement0.style.width = (tempSpan0.offsetWidth + 70.34) + "px";
     document.body.removeChild(tempSpan0);
+
+    const tempSpan1 = document.createElement("span");
+    tempSpan1.style.visibility = "hidden";
+    tempSpan1.style.position = "absolute";
+    tempSpan1.style.font = window.getComputedStyle(selectElement1).font;
+    tempSpan1.innerText = selectElement1.options[selectElement1.selectedIndex].text;
+    document.body.appendChild(tempSpan1);
+    selectElement1.style.width = (tempSpan1.offsetWidth + 70.34) + "px";
+    document.body.removeChild(tempSpan1);
   }
 
   // Beim ersten Laden aufrufen
   window.addEventListener("load", ()=> {
     const select = document.getElementById("dynamicSelect");
     const select0 = document.getElementById("dynamicSelect0");
-    adjustWidth(select, select0);
+    const select1 = document.getElementById("dynamicSelect1");
+    adjustWidth(select, select0, select1);
   });
 function toggleTooltip() {
   const container = document.querySelector('.tooltip-container');

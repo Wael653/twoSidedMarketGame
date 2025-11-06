@@ -22,22 +22,24 @@ def configuration(request):
         error = ""
         if request.method == "GET":
           request.session.flush()
+          '''
           request.session["configured"] = False
-          request.session[f'buyers_numberA_in_round_0'] = 600
-          request.session[f'buyers_numberB_in_round_0'] = 400
-          request.session[f'suppliers_numberA_in_round_0'] = 40
-          request.session[f'suppliers_numberB_in_round_0'] = 60
+          request.session[f'buyers_numberA_in_round_0'] = 500
+          request.session[f'buyers_numberB_in_round_0'] = 500
+          request.session[f'suppliers_numberA_in_round_0'] = 50
+          request.session[f'suppliers_numberB_in_round_0'] = 50
+          '''
         if request.method == "POST": 
             game_rounds_number = request.POST.get("game_rounds_number")
             cross_side = request.POST.get("cross_side")
-          #  market_share = request.POST.get("market-share")
+            market_share = request.POST.get("market-share")
             
-            # Prüfen ob beide Felder ausgefüllt sind
-            #if game_rounds_number and cross_side and market_share:
-            if game_rounds_number and cross_side:
+            # Prüfen ob beide Felder ausgewählt sind
+            if game_rounds_number and cross_side and market_share:
             # Werte speichern (z.B. in Session)
               request.session["game_rounds_number"] = game_rounds_number
               request.session["cross_side"] = cross_side
+              request.session["market_share"] = market_share
               if cross_side == "option_1":
                    request.session["beta"] = 20
                    request.session["alpha"] = 32
@@ -47,11 +49,18 @@ def configuration(request):
               else:
                    request.session["beta"] = 25
                    request.session["alpha"] = 25
+              if market_share == "hom":    #inhomogene Aufteilung
+                    request.session[f'buyers_numberA_in_round_0'] = 500
+                    request.session[f'buyers_numberB_in_round_0'] = 500
+                    request.session[f'suppliers_numberA_in_round_0'] = 50
+                    request.session[f'suppliers_numberB_in_round_0'] = 50                
+              else:                        #inhomogene Aufteilung
+                   request.session[f'buyers_numberA_in_round_0'] = 600
+                   request.session[f'buyers_numberB_in_round_0'] = 400
+                   request.session[f'suppliers_numberA_in_round_0'] = 40
+                   request.session[f'suppliers_numberB_in_round_0'] = 60
               make_place_preferences()
               request.session["configured"] = True
-          #    print("alpha: ", request.session.get("alpha"))
-          #    print("beta: ", request.session.get("beta"))
-              # Redirect zu round page
               return redirect('round_view', round_number=1, market='A')
             else:
                error = "Bitte wähle alle Optionen aus."
@@ -434,10 +443,10 @@ def instructions_view(request):
 def make_travel_costs_differences(seed=None):
     global travel_costs_differences  
     global prefs_supplier
-    c = 36
-  #  c = random.choice([36, 34])
-  #  d = random.choice([0, 1, 2])
-    d = 0
+   # c = 36
+    c = random.choice([36, 34, 38])
+    d = random.choice([0, 1, -1])
+   # d = 0
     counts = {0: 6 + (36 - c), -1: 10, -3: 14, -5: c, -7: 18 , -9: 16}
     rows = []
 
@@ -455,7 +464,7 @@ def make_travel_costs_differences(seed=None):
         rows.extend([[valuee, 0] for _ in range(left_cnt)])   # valuee in Spalte 0
         rows.extend([[0, valuee] for _ in range(right_cnt)])  # valuee in Spalte 1
 
- #   random.shuffle(rows)
+    random.shuffle(rows)
 
     # Indizes je Paar sammeln
     group_idx = {}
@@ -478,9 +487,9 @@ def make_place_preferences():
      global place_preferences
      global prefs_buyer
      counts = {0: 10, 1: 30, 2: 40, 3: 200, 5: 360, 7:200,  9:160 }
-#     d = random.choice([0, 1, 2])
+     d = random.choice([0, 1, 2, -1, -2])
  #    d = random.choice([0])
-     d = 0
+ #    d = 0
      rows = []
      rows.extend([[0, 0] for _ in range(counts[0])])
          # Verteil gleichmäßig negativer Werte zwischen den Spalten
@@ -494,7 +503,7 @@ def make_place_preferences():
      for valuee, (left, right) in even_split.items():
         rows.extend([[valuee, 0] for _ in range(left)])   # valuee in Spalte 0
         rows.extend([[0, valuee] for _ in range(right)])  # valuee in Spalte 1
-   #  random.shuffle(rows)
+     random.shuffle(rows)
 
      # Indizes je Paar sammeln
      group_idx = {}

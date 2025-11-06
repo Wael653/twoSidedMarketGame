@@ -5,7 +5,7 @@ function initChartsOnce() {
     const ctxSupplier = document.getElementById('chart-supplier');
     const ctxBuyer = document.getElementById('chart-buyer');
     const ctxSales = document.getElementById('chart-sales');
-    roundsLabel = []
+    let roundsLabel = []
     let roundNumber = document.getElementById("round_header")
     data = roundNumber.dataset
     for (let i = 1; i < Number(data.roundNumber) + 1; i++) {
@@ -66,7 +66,10 @@ function initChartsOnce() {
     const cardWidth = card.offsetWidth;
     console.log("cardWidth: ", cardWidth)
     
-    //Teste die gespeicherten Daten
+    //Teste die gespeicherten Daten 
+    console.log("roundsLabel:", roundsLabel);
+    console.log("data.roundNumber:", roundNumber.dataset.roundNumber);
+    console.log("roundNumber: ",document.getElementById("round_header"));
     console.log("char supplier: ",document.getElementById("chart-supplier"));
     console.log("Anzahl der Käufer in A: " ,buyersNumberA)
     console.log("round_number + 1: ", roundNumber.dataset.roundNumber + 1)
@@ -111,14 +114,15 @@ function initChartsOnce() {
                 x: {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
-                        font: {
-                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
+                        font: {  //  Math.max(12, cardWidth * 0.03)
+                            size: 12,       // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }
             }
                 }
-            },
+            }
+            ,
             plugins: {
                 tooltip: {
                     callbacks: {
@@ -189,7 +193,7 @@ function initChartsOnce() {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
                         font: {
-                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
+                            size: 12,          // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }
@@ -257,7 +261,7 @@ function initChartsOnce() {
                     ticks: {
                         color: '#25c46dff',         // Schriftfarbe
                         font: {
-                            size: Math.min(16,cardWidth * 0.03),          // Schriftgröße
+                            size: 12,          // Schriftgröße
                             family: 'Arial',   // Schriftart
                             weight: 400             // Schriftstil
                             }

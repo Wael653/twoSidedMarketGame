@@ -25,7 +25,6 @@
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="15">15</option>
-          <option value="20">20</option>
         </select>
       </div> 
     <!--  Zweite Zeile--> 
@@ -69,7 +68,7 @@
             <i class="bi bi-shop"></i>   
             <label class="option-label5">{% translate "Marktanteil:" %}</label>
           </div>
-          <select id= "dynamicSelect0" name="market-share" class="modal-select" name="market-share">
+          <select id= "dynamicSelect1" onchange="adjustWidth(this)" name="market-share" class="modal-select" name="market-share">
             <option value="">{% translate "wählen" %}</option>
             <option value="hom">{% translate "homogen" %}</option>
             <option value="inhom">{% translate "inhomogen" %}</option>

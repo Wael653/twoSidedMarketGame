@@ -118,7 +118,7 @@ i.bi.bi-gear-fill {
 
 
 .wrap-second-row {
-    align-items: flex-start;
+    align-items: center;
 }
 
 
@@ -244,9 +244,8 @@ button.simulation-start-btn {
   text-align: left;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   width: max(50cqw);
-  /* text-align: left; */
-  /* padding-left: 6cqw; */
-  /* max-width: 100%; */
+  position: relative;
+  z-index: 5000;
 }
 .tooltip-container {
   position: absolute;
@@ -285,7 +284,7 @@ button.simulation-start-btn {
 
 .tooltip-arrow {
   position: absolute;
-  transform: translateX(-105%);
+  transform: translateX(-123%);
   right: 0;
   width: 0;
   /* height: 30px; */
@@ -294,6 +293,7 @@ button.simulation-start-btn {
   border-bottom: 17px solid #ffc300; /* zeigt nach unten */
    /* optisch an den Text andocken */
   margin-top: -4.8%;
+  z-index: 5000;
 }
 
 .tooltip-wrapper {
