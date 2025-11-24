@@ -70,7 +70,7 @@ def configuration(request):
 
 def round_view(request, round_number, market):
     global travel_costs_differences
-    if request.session.get("configured") == False or round_number > int(request.session.get("game_rounds_number")):
+    if request.session.get("configured") == None or round_number > int(request.session.get("game_rounds_number")):
          return redirect("configuration")
     
     if request.method == "POST":
@@ -148,6 +148,7 @@ def results_view(request, round_number):
      if round_number == int(request.session['game_rounds_number']):
      #     print(f"Rundenanzahl: {round_number} sind fertig abgelaufen")
           last_round = True
+     request.session['last_round'] = last_round
      nxt_round = round_number + 1
      # Speichere die Verkäuferanzahl sowie die gesetzte Preise von Flohmärkten A und B in Listen 
      suppliers_number_list_A = []
@@ -264,12 +265,12 @@ def calculate_suppliers_number(request, round_number):
          print("scoreA_supplier: ", scoreA_supplier)
          scoreB_supplier = calculate_supplier_score(request, supplier, market = "B")
       #   if scoreA_supplier <0 and scoreB_supplier < 0:
-         print("scoreB_supplier: ", scoreB_supplier)
-         print("Zahlungsbereitschaft: ", supplier.willingness_to_pay)
-         print("Transportkosten zu A: ", supplier.travel_cost_to_A)
-         print("Transportkosten zu B: ", supplier.travel_cost_to_B)
-         print("ID: ", supplier.supplier_id)
-         print("*******")
+      #   print("scoreB_supplier: ", scoreB_supplier)
+      #   print("Zahlungsbereitschaft: ", supplier.willingness_to_pay)
+      #   print("Transportkosten zu A: ", supplier.travel_cost_to_A)
+      #   print("Transportkosten zu B: ", supplier.travel_cost_to_B)
+      #   print("ID: ", supplier.supplier_id)
+      #   print("*******")
 
                #    print("scoreB_supplier: ", scoreB_supplier)
      #    print("scoreA - scoreB: ", scoreA_supplier - scoreB_supplier)
@@ -385,14 +386,18 @@ def calculate_buyers_number(request, round_number):
      return len(list_buyersA), len(list_buyersB)
 
 def winner_view(request):
+     if request.session.get("last_round") == None:
+         return redirect("configuration")
      Umsatz_list_A = request.session.get("Umsatz_list_A")
    #  print("Umsatz_list_A: ", Umsatz_list_A)
      sum_A = sum(Umsatz_list_A)
+     request.session['sum_A'] = sum_A
      Umsatz_list_B = request.session.get("Umsatz_list_B")
      sum_B = sum(Umsatz_list_B)
+     request.session['sum_B'] = sum_B
      winner = 'A' if sum_A > sum_B else 'B'
      if sum_A == sum_B:
-          return render(request, 'draw_site.html', {'sum_A':sum_A})
+          return redirect('draw')
      return render(request, 'winner_site.html', {'sum_A':sum_A, 'sum_B':sum_B, 'winner': winner})
       
      
@@ -436,7 +441,11 @@ def calculate_buyer_score(request, buyer, market):
      return round(score, 2)
 
 def draw_view(request):
-     return render(request, 'draw_site.html', {})
+     print("last_round: ", request.session.get("last_round"))
+     if request.session.get("last_round") == None:
+         return redirect("configuration")
+     sum_A = request.session.get('sum_A')
+     return render(request, 'draw_site.html', {"sum_A": sum_A})
 def instructions_view(request):
      return render(request, 'explanation_site.html', {})
 
@@ -487,7 +496,7 @@ def make_place_preferences():
      global place_preferences
      global prefs_buyer
      counts = {0: 10, 1: 30, 2: 40, 3: 200, 5: 360, 7:200,  9:160 }
-     d = random.choice([0, 1, 2, -1, -2])
+     d = random.choice([0, 1, -1])
  #    d = random.choice([0])
  #    d = 0
      rows = []

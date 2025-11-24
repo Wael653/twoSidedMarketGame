@@ -1,6 +1,6 @@
 .header2 {
     font-weight: bolder;
-    font-size: max(1rem,6.5cqw);
+    font-size: max(1rem,3cqw);
     font-family: Sans-serif;
     color: #ff9100;   /*#7e5d4a; */
     /* margin-bottom: 1rem; */
@@ -9,12 +9,12 @@
     text-align: center;
     font-family: sans-serif;
     margin-bottom: 1.8rem;
-    font-size: 3.2cqw;
+    font-size: 1.5cqw;
 }
 Button.draw-btn {
     /* margin-top: 20px; */
-    font-size: 4cqw;
-    padding: 4cqw 5cqw;
+    font-size: 2cqw;
+    padding: 2cqw 3cqw;
 }
 
 .draw-sale {
@@ -26,12 +26,10 @@ Button.draw-btn {
     font-size: 1.8rem;
 }
 .draw-sale > div:nth-child(2) {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
-.card-drawing {
-width: 50%;
-}
+.card-drawing {width: var(--modal-width);padding: 4cqw;}
 
 .overlay-drawing {
     width: var(--modal-winner-width);

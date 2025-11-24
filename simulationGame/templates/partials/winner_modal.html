@@ -9,6 +9,9 @@
             <div>{% translate "Der Gewinner dieses Spiels ist" %}</div>
         </header>
         <section>
+            <div class="winner-avatar">
+            <img {% if winner == "A" %} src="../../static/images/player1.png" {% else %} src="../../static/images/player2.png" {% endif %} alt="Benutzer Avatar">
+            </div>
             <div class="winner-name">
                 <i class="bi bi-star-fill"></i>
                 <span>{% translate "Spieler " %}{{ winner }}</span>

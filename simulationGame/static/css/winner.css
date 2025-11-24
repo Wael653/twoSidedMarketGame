@@ -5,14 +5,13 @@
 .header-winner > h1, .header-winner > div  {
     font-family: Sans-serif;
     color: #7e5d4a;
-    margin-bottom: min(5.5cqw,1rem);
+    margin-bottom: 4cqw;
 }
 
 .header-winner {
     text-align: center;
 }
-.trophy {
-font-size: 6rem;color: #7e5d4a;}
+.trophy {font-size: 30cqw;color: #7e5d4a;}
 .bi-trophy {
     font-size: 5rem;
     color: #7e5d4a;
@@ -30,6 +29,7 @@ font-size: 6rem;color: #7e5d4a;}
     animation-name: modalIn;
     animation-duration: 0.8s;
     box-sizing: border-box;
+    margin-bottom: 12px;
 }
   @keyframes modalIn {
      from { opacity: 0; transform: scale(0.5);}
@@ -37,13 +37,12 @@ font-size: 6rem;color: #7e5d4a;}
 }
 
 .winner-name {
-    border: 1px solid;
     text-align: center;
-    /* width: 70cqw; */
+    width: 70cqw;
     margin: auto;
     padding: 3cqw 3.5cqw;
     border-radius: 30px;
-    margin-bottom: 18px;
+    margin-bottom: 7cqw;
     background-color: #6a994e;
     border: none;
     color:aliceblue;
@@ -113,4 +112,16 @@ button.back:hover {
 .button-back:active {
   background: #dda15e;     
   transform: scale(0.92);   
+}
+
+.winner-avatar {
+    text-align: center;
+    margin-bottom: 4cqw;
+    margin-top: 3cqw;
+}
+.winner-avatar img {
+    height: 50%;
+    width: 50%;
+    display: inline-block;
+    align-self: center;
 }

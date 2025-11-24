@@ -34,7 +34,6 @@ button.btn-instruction:active {
     border: 2px solid #b6a18b;
     background: #f9edd6;
     border-radius: 32px;
-    /* width: 20%; */
     animation-name: modalIn;
     animation-duration: 0.8s;
     gap: 1rem;

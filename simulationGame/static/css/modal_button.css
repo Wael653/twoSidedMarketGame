@@ -2,7 +2,7 @@
   background: linear-gradient(135deg, #f7ecd7 80%, #eed9c6 100%);
   border-radius: 15px;
   font-family:Arial;
-  padding: clamp(0.5rem, 0.431rem + 0.46vw, 0.625rem) clamp(0.625rem, 0.556rem + 0.46vw, 0.75rem);
+  padding: clamp(0.5rem, 0.431rem + 0.46vw, 0.68rem) clamp(0.625rem, 0.556rem + 0.46vw, 0.75rem);
   border: 2.5px solid #d4a76c;
   transition: transform 0.2s;
   font-size: clamp(0.75rem, 0.474rem + 1.839vw, 1.25rem);
