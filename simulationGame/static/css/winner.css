@@ -5,7 +5,7 @@
 .header-winner > h1, .header-winner > div  {
     font-family: Sans-serif;
     color: #7e5d4a;
-    margin-bottom: 4cqw;
+    margin-bottom: 3cqw;
 }
 
 .header-winner {
@@ -116,7 +116,7 @@ button.back:hover {
 
 .winner-avatar {
     text-align: center;
-    margin-bottom: 4cqw;
+    margin-bottom: 3cqw;
     margin-top: 3cqw;
 }
 .winner-avatar img {
